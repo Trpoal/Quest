@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/continueButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="17dp"
+        android:layout_marginTop="200dp"
+        android:onClick="goTo"
+        android:text="@string/continueStr" />
+
+    <Button
+        android:id="@+id/newGameButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/continueButton"
+        android:layout_alignStart="@+id/continueButton"
+        android:layout_below="@+id/continueButton"
+        android:layout_marginTop="16dp"
+        android:onClick="goTo"
+        android:text="@string/newGameStr" />
+
+    <Button
+        android:id="@+id/miniGamesButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/newGameButton"
+        android:layout_alignStart="@+id/newGameButton"
+        android:layout_below="@+id/newGameButton"
+        android:layout_marginTop="21dp"
+        android:onClick="goTo"
+        android:text="@string/miniGamesStr" />
+
+</RelativeLayout>

@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Quest</string>
+    <string name="newGameStr">Новая игра</string>
+    <string name="exitStr">Выход</string>
+    <string name="continueStr">Продолжить</string>
+    <string name="miniGamesStr">Мини-игры</string>
+    <string name="OthelloText">Отелло</string>
+    <string name="todo">TODO</string>
+    <string name="textview">TextView</string>
+    <string name="fiveInRow">5 в ряд</string>
+</resources>
