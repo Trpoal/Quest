@@ -7,11 +7,15 @@ import android.widget.ImageButton;
 
 import java.util.ArrayList;
 
+import helpClasses.DialogFragment;
+
 public class FiveInRowActivity extends AppCompatActivity {
+
+    /*Класс реализует работу активити с игрой 5 в ряд*/
 
     private static final int FIVE_IN_ROW_INFO = 3;
 
-    ArrayList<ImageButton> cellArray = new ArrayList<>();
+    ArrayList<ImageButton> cellArray = new ArrayList<>(); // Массив всех кнопок на поле
 
     boolean que = true;
 
@@ -22,7 +26,9 @@ public class FiveInRowActivity extends AppCompatActivity {
     }
 
     public void infoClick(View view) {
-        android.app.DialogFragment newFragment = com.a16ivt1.quest.DialogFragment.newInstance(FIVE_IN_ROW_INFO);
+        // Вызов алерта для пояснения правил игры
+        // На экрана выделяется фрагмент, куда помещается алерт
+        android.app.DialogFragment newFragment = DialogFragment.newInstance(FIVE_IN_ROW_INFO);
         newFragment.show(getFragmentManager(), "dialog");
     }
 
@@ -101,13 +107,15 @@ public class FiveInRowActivity extends AppCompatActivity {
         ImageButton cell = (ImageButton) findViewById(view.getId());
         if(que)
         {
+            // Устанавливает на выбранной кнопке изобрание хода игрока
             cell.setBackground(this.getResources().getDrawable(R.drawable.five_in_row_x));
         }
         else
         {
+            // Устанавливает на выбранной кнопке изобрание хода компьютера
             cell.setBackground(this.getResources().getDrawable(R.drawable.five_in_row_zero));
         }
-        cell.setEnabled(false);
+        cell.setEnabled(false); // Кнопка не активна для дальнейшего выбора
         que = !que;
     }
 }

@@ -7,6 +7,8 @@ import android.widget.ImageButton;
 
 import java.util.ArrayList;
 
+import helpClasses.DialogFragment;
+
 public class OthelloActivity extends AppCompatActivity {
 
     private static final int OTHELLO_INFO = 2;
@@ -24,7 +26,8 @@ public class OthelloActivity extends AppCompatActivity {
     }
 
     public void infoClick(View view) {
-        android.app.DialogFragment newFragment = com.a16ivt1.quest.DialogFragment.newInstance(OTHELLO_INFO);
+        // Открывает алерт с правилами для игрока в игру Отелло
+        android.app.DialogFragment newFragment = DialogFragment.newInstance(OTHELLO_INFO);
         newFragment.show(getFragmentManager(), "dialog");
 
     }

@@ -1,7 +1,9 @@
 package com.a16ivt1.quest;
 
 import android.app.DialogFragment;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -15,8 +17,8 @@ import java.io.InputStreamReader;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static int progressOfGame;   //Прогресс квеста
-    static int complexityOfGame = 0;    //Сложность мини-игр
+    static int progressOfGame;   //Прогресс квеста
+    public static int complexityOfGame = 0;    //Сложность мини-игр
 
     private static final int GAME_ACTIVITY = 1;
     private static final int MINI_GAMES_ACTIVITY = 2;
@@ -25,11 +27,12 @@ public class MainActivity extends AppCompatActivity {
     Button continueButton;
     TextView v;
 
+    public static boolean newGame = false;
+
 
     /*В файле хранится информация о моменте в квесте
     * О сложности мини-игр
     * О мини играх, которые уже доступны для прохождения*/
-    final String FILENAME = "file";
 
 
     @Override
@@ -40,20 +43,8 @@ public class MainActivity extends AppCompatActivity {
 
         continueButton = (Button) findViewById(R.id.continueButton);
 
-        try {
-            // открываем поток для чтения
-            BufferedReader br = new BufferedReader(new InputStreamReader(openFileInput(FILENAME)));
-            String str = "";
-            // читаем содержимое
-            str = br.readLine();
-            progressOfGame = Integer.parseInt(str);
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
+
 
     public void goTo(View v) {
         /* Открывает новую активити в зависимости от нажатой кнопки*/
@@ -63,12 +54,11 @@ public class MainActivity extends AppCompatActivity {
                 break;
             }
             case R.id.newGameButton: {
-                complexityOfGame = 1000;
-                progressOfGame = 0;
+                newGame = true;
 
                 /*Создается и открывается новое диалоговое окно
                 * Узнается сложность мини-игр*/
-                DialogFragment newFragment = com.a16ivt1.quest.DialogFragment.newInstance(GAME_ACTIVITY );
+                DialogFragment newFragment = helpClasses.DialogFragment.newInstance(GAME_ACTIVITY );
                 newFragment.show(getFragmentManager(), "dialog");
                 break;
             }

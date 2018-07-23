@@ -1,4 +1,4 @@
-package com.a16ivt1.quest;
+package helpClasses;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -8,10 +8,14 @@ import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import com.a16ivt1.quest.GameActivity;
+
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+
+/* Класс для работы с базой данных */
 
 public class DatabaseHelper extends SQLiteOpenHelper {
     String DB_PATH = null;
@@ -50,6 +54,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             String myPath = DB_PATH + DB_NAME;
             checkDB = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
             int f = checkDB.getVersion();
+            /*Сравнение старой версии базы данных в программе
+            * С новой версией из файла
+            * Если версии различаются, то база данных обновится
+            * Если версии одинаковые, то программа запустит старую базу */
             if (DB_VERSION < f) {
                 DB_VERSION=f;
                 update = true;
@@ -63,6 +71,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     private void copyDataBase() throws IOException {
+        /*Чтение базы данных*/
         InputStream myInput = myContext.getAssets().open(DB_NAME);
         String outFileName = DB_PATH + DB_NAME;
         OutputStream myOutput = new FileOutputStream(outFileName);

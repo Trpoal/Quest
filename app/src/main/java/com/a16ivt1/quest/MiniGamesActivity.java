@@ -9,6 +9,9 @@ import android.widget.TextView;
 
 public class MiniGamesActivity extends AppCompatActivity {
 
+    /*Активити показывает какие мини-игры сейчас доступны пользователю
+    * А так же дает возможность при нажатии на картинку перейти к выбранной мини игре*/
+
     ImageButton othelloBut;
     TextView othelloText;
 
@@ -24,6 +27,8 @@ public class MiniGamesActivity extends AppCompatActivity {
 
     public void goToGame(View v)
     {
+        // Переход на другие активити с мини-играми, если они доступны
+        // Пока что они всегда доступны, но в скором времени я это доработаю
         Intent intent;
         switch(v.getId())
         {
