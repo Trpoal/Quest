@@ -104,9 +104,8 @@ public class OthelloActivity extends AppCompatActivity {
 
     }
 
-    public void choseCell(View view) {
+    public void choseCell(View cell) {
         /*Ставит на клетку поля "фишку" игрока*/
-        ImageButton cell = (ImageButton) findViewById(view.getId());
         if(que)
         {
             cell.setBackground(this.getResources().getDrawable(R.drawable.othello_while_pic));

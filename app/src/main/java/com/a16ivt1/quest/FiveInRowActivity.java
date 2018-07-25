@@ -104,9 +104,8 @@ public class FiveInRowActivity extends AppCompatActivity {
 
     }
 
-    public void choseCell(View view) {
+    public void choseCell(View cell) {
         /*Ставит на клетку поля "фишку" игрока*/
-        ImageButton cell = (ImageButton) findViewById(view.getId());
         if(que)
         {
             // Устанавливает на выбранной кнопке изобрание хода игрока
