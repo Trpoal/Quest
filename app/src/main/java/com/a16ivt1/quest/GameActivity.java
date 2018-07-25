@@ -7,6 +7,7 @@ import android.database.SQLException;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -36,6 +37,7 @@ public class GameActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_game);
 
         progress = MainActivity.progressOfGame;
@@ -103,10 +105,27 @@ public class GameActivity extends AppCompatActivity {
                 c.moveToFirst();
             }
         }
-        text.setText(c.getString(1));
-        var1But.setText(c.getString(3));
-        var2But.setText(c.getString(5));
-        var3But.setText(c.getString(7));
+        if(c.getCount()<progress)
+        {
+            text.setText("Конец истории");
+            var1But.setEnabled(false);
+            var1But.setVisibility(View.INVISIBLE);
+            var2But.setEnabled(false);
+            var2But.setVisibility(View.INVISIBLE);
+            var3But.setEnabled(false);
+            var3But.setVisibility(View.INVISIBLE);
+            return;
+        }
+        else
+        {
+            text.setText(c.getString(1));
+            var1But.setText(c.getString(3));
+            var2But.setText(c.getString(5));
+            var3But.setText(c.getString(7));
+        }
+
+
+
     }
 
     public void nextText(View view) {
@@ -139,6 +158,8 @@ public class GameActivity extends AppCompatActivity {
             var2But.setVisibility(View.INVISIBLE);
             var3But.setEnabled(false);
             var3But.setVisibility(View.INVISIBLE);
+            progress = 1000;
+            MainActivity.progressOfGame = 1000;
             return;
         }
         else
