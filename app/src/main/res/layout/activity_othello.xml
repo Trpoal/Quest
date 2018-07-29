@@ -7,7 +7,34 @@
     tools:context=".OthelloActivity">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/back"
+        android:layout_width="422dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ot_pic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/infoBut"
+        android:layout_width="47dp"
+        android:layout_height="49dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/info_pic"
+        android:onClick="infoClick"
+        app:layout_constraintBottom_toTopOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/field"
         android:layout_width="403dp"
         android:layout_height="369dp"
         android:layout_marginEnd="8dp"
@@ -28,11 +55,11 @@
         android:layout_marginEnd="8dp"
         android:background="@drawable/cell_pic"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="@+id/field"
         app:layout_constraintHorizontal_bias="0.02"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="@+id/field"
+        app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.00999999" />
 
     <ImageButton
@@ -44,11 +71,11 @@
         android:layout_marginStart="8dp"
         android:background="@drawable/cell_pic"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="@+id/field"
         app:layout_constraintHorizontal_bias="0.12"
         app:layout_constraintStart_toStartOf="@+id/cell0"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.00999999" />
 
     <ImageButton
@@ -60,11 +87,11 @@
         android:layout_marginStart="8dp"
         android:background="@drawable/cell_pic"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="@+id/field"
         app:layout_constraintHorizontal_bias="0.27"
         app:layout_constraintStart_toStartOf="@+id/cell0"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.009" />
 
     <ImageButton
@@ -76,11 +103,11 @@
         android:layout_marginStart="8dp"
         android:background="@drawable/cell_pic"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="@+id/field"
         app:layout_constraintHorizontal_bias="0.417"
         app:layout_constraintStart_toStartOf="@+id/cell0"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.009" />
 
     <ImageButton
@@ -92,11 +119,11 @@
         android:layout_marginStart="8dp"
         android:background="@drawable/cell_pic"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="@+id/field"
         app:layout_constraintHorizontal_bias="0.57"
         app:layout_constraintStart_toStartOf="@+id/cell0"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.009" />
 
     <ImageButton
@@ -108,11 +135,11 @@
         android:layout_marginStart="8dp"
         android:background="@drawable/cell_pic"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="@+id/field"
         app:layout_constraintHorizontal_bias="0.715"
         app:layout_constraintStart_toStartOf="@+id/cell0"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.009" />
 
     <ImageButton
@@ -123,11 +150,11 @@
         android:layout_marginEnd="8dp"
         android:background="@drawable/cell_pic"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="@+id/field"
         app:layout_constraintHorizontal_bias="0.86"
         app:layout_constraintStart_toStartOf="@+id/cell0"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.009" />
 
     <ImageButton
@@ -137,11 +164,11 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/cell_pic"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="@+id/field"
         app:layout_constraintHorizontal_bias="0.98"
         app:layout_constraintStart_toStartOf="@+id/cell0"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.009" />
 
     <ImageButton
@@ -152,11 +179,11 @@
         android:layout_marginTop="8dp"
         android:background="@drawable/cell_pic"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="@+id/field"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/cell0"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.137" />
 
     <ImageButton
@@ -167,11 +194,11 @@
         android:layout_marginTop="8dp"
         android:background="@drawable/cell_pic"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="@+id/field"
         app:layout_constraintHorizontal_bias="0.138"
         app:layout_constraintStart_toStartOf="@+id/cell0"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.137" />
 
     <ImageButton
@@ -182,11 +209,11 @@
         android:layout_marginTop="8dp"
         android:background="@drawable/cell_pic"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="@+id/field"
         app:layout_constraintHorizontal_bias="0.28"
         app:layout_constraintStart_toStartOf="@+id/cell0"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.137" />
 
     <ImageButton
@@ -197,11 +224,11 @@
         android:layout_marginTop="8dp"
         android:background="@drawable/cell_pic"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="@+id/field"
         app:layout_constraintHorizontal_bias="0.42"
         app:layout_constraintStart_toStartOf="@+id/cell0"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.137" />
 
     <ImageButton
@@ -212,11 +239,11 @@
         android:layout_marginTop="8dp"
         android:background="@drawable/cell_pic"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="@+id/field"
         app:layout_constraintHorizontal_bias="0.56"
         app:layout_constraintStart_toStartOf="@+id/cell0"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.137" />
 
     <ImageButton
@@ -227,11 +254,11 @@
         android:layout_marginTop="8dp"
         android:background="@drawable/cell_pic"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="@+id/field"
         app:layout_constraintHorizontal_bias="0.7"
         app:layout_constraintStart_toStartOf="@+id/cell0"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.137" />
 
     <ImageButton
@@ -242,11 +269,11 @@
         android:layout_marginTop="8dp"
         android:background="@drawable/cell_pic"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="@+id/field"
         app:layout_constraintHorizontal_bias="0.85"
         app:layout_constraintStart_toStartOf="@+id/cell0"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.137" />
 
     <ImageButton
@@ -257,11 +284,11 @@
         android:layout_marginTop="8dp"
         android:background="@drawable/cell_pic"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="@+id/field"
         app:layout_constraintHorizontal_bias="0.991"
         app:layout_constraintStart_toStartOf="@+id/cell0"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.137" />
 
     <ImageButton
@@ -271,11 +298,11 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/cell_pic"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="@+id/field"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/cell0"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.3" />
 
     <ImageButton
@@ -285,11 +312,11 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/cell_pic"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="@+id/field"
         app:layout_constraintHorizontal_bias="0.14"
         app:layout_constraintStart_toStartOf="@+id/cell0"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.3" />
 
     <ImageButton
@@ -299,11 +326,11 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/cell_pic"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="@+id/field"
         app:layout_constraintHorizontal_bias="0.28"
         app:layout_constraintStart_toStartOf="@+id/cell0"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.3" />
 
     <ImageButton
@@ -313,11 +340,11 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/cell_pic"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="@+id/field"
         app:layout_constraintHorizontal_bias="0.42"
         app:layout_constraintStart_toStartOf="@+id/cell0"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.3" />
 
     <ImageButton
@@ -327,11 +354,11 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/cell_pic"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="@+id/field"
         app:layout_constraintHorizontal_bias="0.56"
         app:layout_constraintStart_toStartOf="@+id/cell0"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.3" />
 
     <ImageButton
@@ -341,11 +368,11 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/cell_pic"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="@+id/field"
         app:layout_constraintHorizontal_bias="0.7"
         app:layout_constraintStart_toStartOf="@+id/cell0"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.3" />
 
     <ImageButton
@@ -355,11 +382,11 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/cell_pic"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="@+id/field"
         app:layout_constraintHorizontal_bias="0.84"
         app:layout_constraintStart_toStartOf="@+id/cell0"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.3" />
 
     <ImageButton
@@ -369,11 +396,11 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/cell_pic"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="@+id/field"
         app:layout_constraintHorizontal_bias="0.98"
         app:layout_constraintStart_toStartOf="@+id/cell0"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.3" />
 
     <ImageButton
@@ -383,11 +410,11 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/cell_pic"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="@+id/field"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/cell0"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.44" />
 
     <ImageButton
@@ -397,11 +424,11 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/cell_pic"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="@+id/field"
         app:layout_constraintHorizontal_bias="0.14"
         app:layout_constraintStart_toStartOf="@+id/cell0"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.44" />
 
     <ImageButton
@@ -411,11 +438,11 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/cell_pic"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="@+id/field"
         app:layout_constraintHorizontal_bias="0.28"
         app:layout_constraintStart_toStartOf="@+id/cell0"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.44" />
 
     <ImageButton
@@ -425,11 +452,11 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/cell_pic"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="@+id/field"
         app:layout_constraintHorizontal_bias="0.42"
         app:layout_constraintStart_toStartOf="@+id/cell0"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.44" />
 
     <ImageButton
@@ -439,11 +466,11 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/cell_pic"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="@+id/field"
         app:layout_constraintHorizontal_bias="0.56"
         app:layout_constraintStart_toStartOf="@+id/cell0"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.44" />
 
     <ImageButton
@@ -453,11 +480,11 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/cell_pic"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="@+id/field"
         app:layout_constraintHorizontal_bias="0.7"
         app:layout_constraintStart_toStartOf="@+id/cell0"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.44" />
 
     <ImageButton
@@ -467,11 +494,11 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/cell_pic"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="@+id/field"
         app:layout_constraintHorizontal_bias="0.84"
         app:layout_constraintStart_toStartOf="@+id/cell0"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.44" />
 
     <ImageButton
@@ -481,11 +508,11 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/cell_pic"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="@+id/field"
         app:layout_constraintHorizontal_bias="0.98"
         app:layout_constraintStart_toStartOf="@+id/cell0"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.44" />
 
     <ImageButton
@@ -495,11 +522,11 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/cell_pic"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="@+id/field"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/cell0"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.58000004" />
 
     <ImageButton
@@ -509,11 +536,11 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/cell_pic"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="@+id/field"
         app:layout_constraintHorizontal_bias="0.14"
         app:layout_constraintStart_toStartOf="@+id/cell0"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.58000004" />
 
     <ImageButton
@@ -523,11 +550,11 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/cell_pic"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="@+id/field"
         app:layout_constraintHorizontal_bias="0.28"
         app:layout_constraintStart_toStartOf="@+id/cell0"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.58000004" />
 
     <ImageButton
@@ -537,11 +564,11 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/cell_pic"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="@+id/field"
         app:layout_constraintHorizontal_bias="0.42"
         app:layout_constraintStart_toStartOf="@+id/cell0"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.58000004" />
 
     <ImageButton
@@ -551,11 +578,11 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/cell_pic"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="@+id/field"
         app:layout_constraintHorizontal_bias="0.56"
         app:layout_constraintStart_toStartOf="@+id/cell0"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.58000004" />
 
     <ImageButton
@@ -565,11 +592,11 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/cell_pic"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="@+id/field"
         app:layout_constraintHorizontal_bias="0.7"
         app:layout_constraintStart_toStartOf="@+id/cell0"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.58000004" />
 
     <ImageButton
@@ -579,11 +606,11 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/cell_pic"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="@+id/field"
         app:layout_constraintHorizontal_bias="0.84"
         app:layout_constraintStart_toStartOf="@+id/cell0"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.58000004" />
 
     <ImageButton
@@ -593,11 +620,11 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/cell_pic"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="@+id/field"
         app:layout_constraintHorizontal_bias="0.98"
         app:layout_constraintStart_toStartOf="@+id/cell0"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.58000004" />
 
     <ImageButton
@@ -607,11 +634,11 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/cell_pic"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="@+id/field"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/cell0"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.73" />
 
     <ImageButton
@@ -621,11 +648,11 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/cell_pic"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="@+id/field"
         app:layout_constraintHorizontal_bias="0.14"
         app:layout_constraintStart_toStartOf="@+id/cell0"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.73" />
 
     <ImageButton
@@ -635,11 +662,11 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/cell_pic"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="@+id/field"
         app:layout_constraintHorizontal_bias="0.279"
         app:layout_constraintStart_toStartOf="@+id/cell0"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.73" />
 
     <ImageButton
@@ -649,11 +676,11 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/cell_pic"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="@+id/field"
         app:layout_constraintHorizontal_bias="0.42"
         app:layout_constraintStart_toStartOf="@+id/cell0"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.73" />
 
     <ImageButton
@@ -663,11 +690,11 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/cell_pic"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="@+id/field"
         app:layout_constraintHorizontal_bias="0.56"
         app:layout_constraintStart_toStartOf="@+id/cell0"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.73" />
 
     <ImageButton
@@ -677,11 +704,11 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/cell_pic"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="@+id/field"
         app:layout_constraintHorizontal_bias="0.7"
         app:layout_constraintStart_toStartOf="@+id/cell0"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.73" />
 
     <ImageButton
@@ -691,11 +718,11 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/cell_pic"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="@+id/field"
         app:layout_constraintHorizontal_bias="0.84"
         app:layout_constraintStart_toStartOf="@+id/cell0"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.73" />
 
     <ImageButton
@@ -705,11 +732,11 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/cell_pic"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="@+id/field"
         app:layout_constraintHorizontal_bias="0.98"
         app:layout_constraintStart_toStartOf="@+id/cell0"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.73" />
 
     <ImageButton
@@ -719,11 +746,11 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/cell_pic"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="@+id/field"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/cell0"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.87" />
 
     <ImageButton
@@ -733,11 +760,11 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/cell_pic"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="@+id/field"
         app:layout_constraintHorizontal_bias="0.14"
         app:layout_constraintStart_toStartOf="@+id/cell0"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.87" />
 
     <ImageButton
@@ -747,11 +774,11 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/cell_pic"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="@+id/field"
         app:layout_constraintHorizontal_bias="0.28"
         app:layout_constraintStart_toStartOf="@+id/cell0"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.87" />
 
     <ImageButton
@@ -761,11 +788,11 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/cell_pic"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="@+id/field"
         app:layout_constraintHorizontal_bias="0.42"
         app:layout_constraintStart_toStartOf="@+id/cell0"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.87" />
 
     <ImageButton
@@ -775,11 +802,11 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/cell_pic"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="@+id/field"
         app:layout_constraintHorizontal_bias="0.56"
         app:layout_constraintStart_toStartOf="@+id/cell0"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.87" />
 
     <ImageButton
@@ -789,11 +816,11 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/cell_pic"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="@+id/field"
         app:layout_constraintHorizontal_bias="0.7"
         app:layout_constraintStart_toStartOf="@+id/cell0"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.87" />
 
     <ImageButton
@@ -803,11 +830,11 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/cell_pic"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="@+id/field"
         app:layout_constraintHorizontal_bias="0.84"
         app:layout_constraintStart_toStartOf="@+id/cell0"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.87" />
 
     <ImageButton
@@ -817,11 +844,11 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/cell_pic"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="@+id/field"
         app:layout_constraintHorizontal_bias="0.98"
         app:layout_constraintStart_toStartOf="@+id/cell0"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.87" />
 
     <ImageButton
@@ -830,11 +857,11 @@
         android:layout_height="41dp"
         android:background="@drawable/cell_pic"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="@+id/field"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/cell0"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.99" />
 
     <ImageButton
@@ -843,11 +870,11 @@
         android:layout_height="41dp"
         android:background="@drawable/cell_pic"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="@+id/field"
         app:layout_constraintHorizontal_bias="0.14"
         app:layout_constraintStart_toStartOf="@+id/cell0"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.99" />
 
     <ImageButton
@@ -856,11 +883,11 @@
         android:layout_height="41dp"
         android:background="@drawable/cell_pic"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="@+id/field"
         app:layout_constraintHorizontal_bias="0.28"
         app:layout_constraintStart_toStartOf="@+id/cell0"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.99" />
 
     <ImageButton
@@ -869,11 +896,11 @@
         android:layout_height="41dp"
         android:background="@drawable/cell_pic"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="@+id/field"
         app:layout_constraintHorizontal_bias="0.42"
         app:layout_constraintStart_toStartOf="@+id/cell0"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.99" />
 
     <ImageButton
@@ -882,11 +909,11 @@
         android:layout_height="41dp"
         android:background="@drawable/cell_pic"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="@+id/field"
         app:layout_constraintHorizontal_bias="0.56"
         app:layout_constraintStart_toStartOf="@+id/cell0"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.99" />
 
     <ImageButton
@@ -895,11 +922,11 @@
         android:layout_height="41dp"
         android:background="@drawable/cell_pic"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="@+id/field"
         app:layout_constraintHorizontal_bias="0.7"
         app:layout_constraintStart_toStartOf="@+id/cell0"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.99" />
 
     <ImageButton
@@ -908,11 +935,11 @@
         android:layout_height="41dp"
         android:background="@drawable/cell_pic"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="@+id/field"
         app:layout_constraintHorizontal_bias="0.84"
         app:layout_constraintStart_toStartOf="@+id/cell0"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.99" />
 
     <ImageButton
@@ -921,28 +948,11 @@
         android:layout_height="41dp"
         android:background="@drawable/cell_pic"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/field"
+        app:layout_constraintEnd_toEndOf="@+id/field"
         app:layout_constraintHorizontal_bias="0.98"
         app:layout_constraintStart_toStartOf="@+id/cell0"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.99" />
-
-    <ImageButton
-        android:id="@+id/infoBut"
-        android:layout_width="47dp"
-        android:layout_height="49dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/information_pic"
-        android:onClick="infoClick"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
 
 </android.support.constraint.ConstraintLayout>
