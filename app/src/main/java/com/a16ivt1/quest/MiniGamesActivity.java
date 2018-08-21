@@ -44,6 +44,12 @@ public class MiniGamesActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
             }
+            case R.id.fiftyBut:
+            {
+                intent = new Intent(MiniGamesActivity.this, FiftyActivity.class);
+                startActivity(intent);
+                break;
+            }
             default:
                 throw new RuntimeException("Unknow button ID");
         }

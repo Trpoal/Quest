@@ -19,7 +19,8 @@
         <activity android:name=".GameActivity" />
         <activity android:name=".MiniGamesActivity" />
         <activity android:name=".OthelloActivity" />
-        <activity android:name=".FiveInRowActivity"></activity>
+        <activity android:name=".FiveInRowActivity" />
+        <activity android:name=".FiftyActivity"></activity>
     </application>
 
 </manifest>

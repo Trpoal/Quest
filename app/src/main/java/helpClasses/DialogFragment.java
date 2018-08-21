@@ -88,6 +88,17 @@ public class DialogFragment extends android.app.DialogFragment {
                 });
                 break;
             }
+            case 4:
+            {
+                /*Создается алерт с описанием игры 5 в ряд */
+                builder.setMessage("ИГРА ПЯТНАШКИ").setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                });
+                break;
+            }
         }
 
 

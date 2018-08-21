@@ -8,4 +8,5 @@
     <string name="todo">TODO</string>
     <string name="textview">TextView</string>
     <string name="fiveInRow">5 в ряд</string>
+    <string name="fifty">Пятнашки</string>
 </resources>

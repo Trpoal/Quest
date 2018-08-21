@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/infoBut2"
+        android:id="@+id/infoBut"
         android:layout_width="47dp"
         android:layout_height="49dp"
         android:layout_marginBottom="8dp"

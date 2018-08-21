@@ -29,7 +29,7 @@
         app:layout_constraintHorizontal_bias="0.159"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/othelloBut"
-        app:layout_constraintVertical_bias="0.13"
+        app:layout_constraintVertical_bias="0.096"
         tools:text="@string/OthelloText" />
 
     <ImageButton
@@ -68,8 +68,8 @@
 
     <ImageButton
         android:id="@+id/othelloBut"
-        android:layout_width="184dp"
-        android:layout_height="152dp"
+        android:layout_width="161dp"
+        android:layout_height="132dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
@@ -82,5 +82,40 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.085" />
+
+    <ImageButton
+        android:id="@+id/fiftyBut"
+        android:layout_width="134dp"
+        android:layout_height="134dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/fifty_pic"
+        android:onClick="goToGame"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.697"
+        app:layout_constraintStart_toEndOf="@+id/othelloBut"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.084" />
+
+    <TextView
+        android:id="@+id/fiftyText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/fifty"
+        android:textColor="@color/main_text_col"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.787"
+        app:layout_constraintStart_toEndOf="@+id/othelloText"
+        app:layout_constraintTop_toBottomOf="@+id/fiftyBut"
+        app:layout_constraintVertical_bias="0.002" />
 
 </android.support.constraint.ConstraintLayout>
