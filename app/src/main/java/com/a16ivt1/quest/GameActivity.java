@@ -91,6 +91,7 @@ public class GameActivity extends AppCompatActivity {
         {
             progress = 0;
             c.moveToFirst();
+            return;
         }
         else
         {
@@ -98,6 +99,11 @@ public class GameActivity extends AppCompatActivity {
             if(settings.contains("progressOfGame"))
             {
                 progress = settings.getInt("progressOfGame",0);
+                if(progress == -1)
+                {
+                    c.moveToFirst();
+                    return;
+                }
                 c.moveToPosition(progress);
             }
             else
@@ -124,9 +130,6 @@ public class GameActivity extends AppCompatActivity {
             var2But.setText(c.getString(5));
             var3But.setText(c.getString(7));
         }
-
-
-
     }
 
     public void nextText(View view) {

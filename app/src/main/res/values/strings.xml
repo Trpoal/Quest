@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Quest</string>
+    <string name="app_name">Remember All</string>
     <string name="newGameStr">Новая игра</string>
     <string name="exitStr">Выход</string>
     <string name="continueStr">Продолжить</string>
