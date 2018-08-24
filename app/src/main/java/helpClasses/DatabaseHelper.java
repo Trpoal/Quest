@@ -20,7 +20,7 @@ import java.io.OutputStream;
 public class DatabaseHelper extends SQLiteOpenHelper {
     String DB_PATH = null;
     private static String DB_NAME = "projectSQL.db";
-    private static int DB_VERSION = 2;
+    private static int DB_VERSION = 1;
     private SQLiteDatabase myDataBase;
     private final Context myContext;
     private boolean update = false;

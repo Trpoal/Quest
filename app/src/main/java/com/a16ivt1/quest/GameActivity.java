@@ -1,6 +1,7 @@
 package com.a16ivt1.quest;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.SQLException;
@@ -95,6 +96,7 @@ public class GameActivity extends AppCompatActivity {
             var1But.setText(c.getString(3));
             var2But.setText(c.getString(5));
             var3But.setText(c.getString(7));
+            MainActivity.newGame = false;
             return;
         }
         else
@@ -103,12 +105,17 @@ public class GameActivity extends AppCompatActivity {
             if(settings.contains("progressOfGame"))
             {
                 progress = settings.getInt("progressOfGame",0);
-                if(progress == -1)
+                if(MainActivity.progressOfGame >progress)
                 {
-                    c.moveToFirst();
-                    return;
+                    c.moveToPosition(MainActivity.progressOfGame-1);
                 }
-                c.moveToPosition(progress);
+                else {
+                    if (progress == -1) {
+                        c.moveToFirst();
+                        return;
+                    }
+                    c.moveToPosition(progress);
+                }
             }
             else
             {
@@ -139,15 +146,16 @@ public class GameActivity extends AppCompatActivity {
     public void nextText(View view) {
         /* При нажатии на определенную кнопку
         * Считывается следующая позиция для курсора*/
+        int newProgress;
         switch (view.getId()) {
             case R.id.var1But:
-                progress = Integer.parseInt(c.getString(2));
+                newProgress = Integer.parseInt(c.getString(2));
                 break;
             case R.id.var2But:
-                progress = Integer.parseInt(c.getString(4));
+                newProgress = Integer.parseInt(c.getString(4));
                 break;
             case R.id.var3But:
-                progress = Integer.parseInt(c.getString(6));
+                newProgress = Integer.parseInt(c.getString(6));
                 break;
             default:
                 throw new RuntimeException("Unknow button ID");
@@ -156,7 +164,17 @@ public class GameActivity extends AppCompatActivity {
         /* Далее несколько проверок на поля базы данных
         * Если ее поле с выбором пустое, то эта кнопка не будет отобраться за экране выбора
         * Если больше нет истории, то будет выведен "Конец истории"*/
-        MainActivity.progressOfGame = progress - 1;
+        if(newProgress == 1000)
+        {
+            //progress++;
+            Intent intent = new Intent(GameActivity.this, FiftyActivity.class);
+            startActivity(intent);
+            this.finish();
+            return;
+
+        }
+        MainActivity.progressOfGame = newProgress - 1;
+        progress = newProgress;
         if(c.isNull(progress - 1))
         {
             text.setText("Конец истории");

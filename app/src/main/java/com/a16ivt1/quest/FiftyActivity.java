@@ -1,5 +1,7 @@
 package com.a16ivt1.quest;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -274,6 +276,15 @@ public class FiftyActivity extends AppCompatActivity {
         // На экрана выделяется фрагмент, куда помещается алерт
         android.app.DialogFragment newFragment = DialogFragment.newInstance(FIFTY_INFO);
         newFragment.show(getFragmentManager(), "dialog");
+    }
+
+    public void cont(View v)
+    {
+        MainActivity.progressOfGame = 5;
+        Intent intent = new Intent(FiftyActivity.this, GameActivity.class);
+        startActivity(intent);
+        this.finish();
+
     }
 
 }
