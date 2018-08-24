@@ -91,6 +91,10 @@ public class GameActivity extends AppCompatActivity {
         {
             progress = 0;
             c.moveToFirst();
+            text.setText(c.getString(1));
+            var1But.setText(c.getString(3));
+            var2But.setText(c.getString(5));
+            var3But.setText(c.getString(7));
             return;
         }
         else

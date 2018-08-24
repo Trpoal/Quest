@@ -60,8 +60,7 @@ public class MainActivity extends AppCompatActivity {
                 newGame = true;
                 /*Создается и открывается новое диалоговое окно
                 * Узнается сложность мини-игр*/
-                DialogFragment newFragment = helpClasses.DialogFragment.newInstance(GAME_ACTIVITY );
-                newFragment.show(getFragmentManager(), "dialog");
+                startAct(GAME_ACTIVITY);
                 break;
             }
             case R.id.miniGamesButton: {
