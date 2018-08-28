@@ -17,6 +17,7 @@ public class FiveInRowActivity extends AppCompatActivity {
     private static final int FIVE_IN_ROW_INFO = 3;
 
     ArrayList<ImageButton> cellArray = new ArrayList<>(); // Массив всех кнопок на поле
+    Works work = new Works();
 
     boolean que = true;
 
@@ -102,17 +103,51 @@ public class FiveInRowActivity extends AppCompatActivity {
         cellArray.add((ImageButton) findViewById(R.id.cell63));
 
     }
+    int l = 0;
+    int m = 0;
+    int st = 0;
 
     public void choseCell(View cell) {
-        /*Ставит на клетку поля "фишку" игрока*/
-        if (que) {
+        if (st == 0) {
+            work.creat();
+            createArrayListOfSell();
+        }
+        st = 1;
+        if (l == 0) {
             // Устанавливает на выбранной кнопке изобрание хода игрока
             cell.setBackground(this.getResources().getDrawable(R.drawable.five_in_row_x));
-        } else {
-            // Устанавливает на выбранной кнопке изобрание хода компьютера
-            cell.setBackground(this.getResources().getDrawable(R.drawable.five_in_row_zero));
+            cell.setEnabled(false);
+
+            int z = 0;
+            for (ImageButton k : cellArray) {
+                if (!k.isEnabled()) {
+                    m = z;
+                    l = work.stepMan(m, que);
+                }
+                z++;
+            }
+            que = !que;
         }
-        cell.setEnabled(false); // Кнопка не активна для дальнейшего выбора
-        que = !que;
+
+        if (l == 0) {
+            // Устанавливает на выбранной кнопке изобрание хода компьютера
+            // cell.setBackground(this.getResources().getDrawable(R.drawable.five_in_row_zero));
+            int h = work.StepAi();
+            cellArray.get(h).setBackground(this.getResources().getDrawable(R.drawable.five_in_row_zero));
+            cellArray.get(h).setEnabled(false);
+            // Кнопка не активна для дальнейшего выбора
+            int z = 0;
+            for (ImageButton k : cellArray) {
+                if (!k.isEnabled()) {
+                    m = z;
+                    l = work.stepMan(m, que);
+                }
+                z++;
+            }
+            que = !que;
+
+        }
     }
+
+
 }
