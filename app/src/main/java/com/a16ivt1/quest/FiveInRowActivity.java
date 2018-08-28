@@ -26,7 +26,9 @@ public class FiveInRowActivity extends AppCompatActivity {
 
     ArrayList<ImageButton> cellArray = new ArrayList<>(); // Массив всех кнопок на поле
     Works work = new Works();
-
+    int l = 0;
+    int m = 0;
+    int st = 0;
     boolean que = true;
 
     @Override
@@ -111,6 +113,10 @@ public class FiveInRowActivity extends AppCompatActivity {
         cellArray.add((ImageButton) findViewById(R.id.cell63));
 
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 46a362f1ab7d3ad054ae5cb476af3aaa40251df2
 
     public void choseCell(View cell) {
         if (st == 0) {
@@ -131,6 +137,8 @@ public class FiveInRowActivity extends AppCompatActivity {
                 }
                 z++;
             }
+            System.out.println("\n");
+            work.vivodM();
             que = !que;
         }
 
@@ -149,8 +157,9 @@ public class FiveInRowActivity extends AppCompatActivity {
                 }
                 z++;
             }
+            System.out.println("\n");
+            work.vivodM();
             que = !que;
-
         }
         switch(l)
         {
@@ -172,5 +181,8 @@ public class FiveInRowActivity extends AppCompatActivity {
             }
         }
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 46a362f1ab7d3ad054ae5cb476af3aaa40251df2
 }
