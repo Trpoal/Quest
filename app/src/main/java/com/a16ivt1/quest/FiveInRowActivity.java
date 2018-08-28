@@ -4,17 +4,25 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
 import helpClasses.DialogFragment;
+import helpClasses.Works;
 
 public class FiveInRowActivity extends AppCompatActivity {
 
     /*Класс реализует работу активити с игрой 5 в ряд*/
 
     private static final int FIVE_IN_ROW_INFO = 3;
+    int l = 0;
+    int m = 0;
+    int st = 0;
 
     ArrayList<ImageButton> cellArray = new ArrayList<>(); // Массив всех кнопок на поле
     Works work = new Works();
@@ -39,14 +47,14 @@ public class FiveInRowActivity extends AppCompatActivity {
         /*Объявление всех клеток с xml файла*/
         cellArray.add((ImageButton) findViewById(R.id.cell0));
         cellArray.add((ImageButton) findViewById(R.id.cell1));
-        cellArray.add((ImageButton) findViewById(R.id.cell1));
         cellArray.add((ImageButton) findViewById(R.id.cell2));
         cellArray.add((ImageButton) findViewById(R.id.cell3));
         cellArray.add((ImageButton) findViewById(R.id.cell4));
         cellArray.add((ImageButton) findViewById(R.id.cell5));
         cellArray.add((ImageButton) findViewById(R.id.cell6));
+        cellArray.add((ImageButton) findViewById(R.id.cell7));
         cellArray.add((ImageButton) findViewById(R.id.cell8));
-        cellArray.add((ImageButton) findViewById(R.id.cell8));
+        cellArray.add((ImageButton) findViewById(R.id.cell9));
         cellArray.add((ImageButton) findViewById(R.id.cell10));
         cellArray.add((ImageButton) findViewById(R.id.cell11));
         cellArray.add((ImageButton) findViewById(R.id.cell12));
@@ -54,7 +62,7 @@ public class FiveInRowActivity extends AppCompatActivity {
         cellArray.add((ImageButton) findViewById(R.id.cell14));
         cellArray.add((ImageButton) findViewById(R.id.cell15));
         cellArray.add((ImageButton) findViewById(R.id.cell16));
-        cellArray.add((ImageButton) findViewById(R.id.cell16));
+        cellArray.add((ImageButton) findViewById(R.id.cell17));
         cellArray.add((ImageButton) findViewById(R.id.cell18));
         cellArray.add((ImageButton) findViewById(R.id.cell19));
         cellArray.add((ImageButton) findViewById(R.id.cell20));
@@ -103,9 +111,6 @@ public class FiveInRowActivity extends AppCompatActivity {
         cellArray.add((ImageButton) findViewById(R.id.cell63));
 
     }
-    int l = 0;
-    int m = 0;
-    int st = 0;
 
     public void choseCell(View cell) {
         if (st == 0) {
@@ -147,7 +152,25 @@ public class FiveInRowActivity extends AppCompatActivity {
             que = !que;
 
         }
+        switch(l)
+        {
+            case 1:
+            {
+                TextView lostText = findViewById(R.id.resultText);
+                lostText.setVisibility(View.VISIBLE);
+                lostText.setText(getString(R.string.win));
+                break;
+            }
+            case 2:
+            {
+                Button retryBut = findViewById(R.id.retry);
+                retryBut.setVisibility(View.VISIBLE);
+                TextView lostText = findViewById(R.id.resultText);
+                lostText.setVisibility(View.VISIBLE);
+                lostText.setText(getString(R.string.lost));
+                break;
+            }
+        }
     }
-
 
 }
