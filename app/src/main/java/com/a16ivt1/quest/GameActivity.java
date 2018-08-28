@@ -84,9 +84,6 @@ public class GameActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = settings.edit();
         editor.putInt("progressOfGame", progress - 1);
         editor.apply();
-        editor = settings.edit();
-        editor.putInt("DB_VERSION", DB_VERSION);
-        editor.apply();
     }
 
     @Override
