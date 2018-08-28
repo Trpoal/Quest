@@ -23,7 +23,7 @@ public class FiveInRowActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_five_in_row);
     }
 
@@ -34,8 +34,7 @@ public class FiveInRowActivity extends AppCompatActivity {
         newFragment.show(getFragmentManager(), "dialog");
     }
 
-    void createArrayListOfSell()
-    {
+    void createArrayListOfSell() {
         /*Объявление всех клеток с xml файла*/
         cellArray.add((ImageButton) findViewById(R.id.cell0));
         cellArray.add((ImageButton) findViewById(R.id.cell1));
@@ -106,13 +105,10 @@ public class FiveInRowActivity extends AppCompatActivity {
 
     public void choseCell(View cell) {
         /*Ставит на клетку поля "фишку" игрока*/
-        if(que)
-        {
+        if (que) {
             // Устанавливает на выбранной кнопке изобрание хода игрока
             cell.setBackground(this.getResources().getDrawable(R.drawable.five_in_row_x));
-        }
-        else
-        {
+        } else {
             // Устанавливает на выбранной кнопке изобрание хода компьютера
             cell.setBackground(this.getResources().getDrawable(R.drawable.five_in_row_zero));
         }

@@ -15,9 +15,9 @@ public class DialogFragment extends android.app.DialogFragment {
     static int mNum;
 
     /*Создает фрагмент
-    * В него заливает Алерт - уведомление для пользователя
-    * В зависимости от места создания фрагмента
-    * Создаются разные Алерты*/
+     * В него заливает Алерт - уведомление для пользователя
+     * В зависимости от места создания фрагмента
+     * Создаются разные Алерты*/
 
     public static DialogFragment newInstance(int num) {
         DialogFragment f = new DialogFragment();
@@ -32,14 +32,11 @@ public class DialogFragment extends android.app.DialogFragment {
         super.onCreate(savedInstanceState);
         AlertDialog.Builder builder;
         builder = new AlertDialog.Builder(getActivity());
-        switch (mNum)
-        {
-            case 1:
-            {
+        switch (mNum) {
+            case 1: {
 
             }
-            case 2:
-            {
+            case 2: {
                 /*Создается алерт с описанием игры Оттелло*/
                 builder.setMessage("ИГРА ОТЕЛЛО").setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                     @Override
@@ -49,8 +46,7 @@ public class DialogFragment extends android.app.DialogFragment {
                 });
                 break;
             }
-            case 3:
-            {
+            case 3: {
                 /*Создается алерт с описанием игры 5 в ряд */
                 builder.setMessage("ИГРА 5 В РЯД").setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                     @Override
@@ -60,8 +56,7 @@ public class DialogFragment extends android.app.DialogFragment {
                 });
                 break;
             }
-            case 4:
-            {
+            case 4: {
                 /*Создается алерт с описанием игры 5 в ряд */
                 builder.setMessage("ИГРА ПЯТНАШКИ").setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                     @Override
@@ -72,9 +67,6 @@ public class DialogFragment extends android.app.DialogFragment {
                 break;
             }
         }
-
-
-
 
 
         return builder.create();

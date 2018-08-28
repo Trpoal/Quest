@@ -13,7 +13,6 @@ import android.widget.TextView;
 import helpClasses.DialogFragment;
 
 
-
 public class FiftyActivity extends AppCompatActivity {
 
     private static final int FIFTY_INFO = 4;
@@ -24,7 +23,7 @@ public class FiftyActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_fifty);
         inBut();
         genField();
@@ -33,32 +32,28 @@ public class FiftyActivity extends AppCompatActivity {
 
     }
 
-    public void genField()
-    {
+    public void genField() {
         /*Расставляет картинки в рандомном порядке на поле*/
         for (int i = 0; i < 16; i++) {
-            int x = (int)(Math.random()*4);
-            int y = (int)(Math.random()*4);
-            while(!(masCell[x][y].getTag()=="0"))
-            {
-                x = (int)(Math.random()*4);
-                y = (int)(Math.random()*4);
-           }
-           if(i==0)
-           {
-               emX = x;
-               emY = y;
-           }
-            setPic(x,y,i);
+            int x = (int) (Math.random() * 4);
+            int y = (int) (Math.random() * 4);
+            while (!(masCell[x][y].getTag() == "0")) {
+                x = (int) (Math.random() * 4);
+                y = (int) (Math.random() * 4);
+            }
+            if (i == 0) {
+                emX = x;
+                emY = y;
+            }
+            setPic(x, y, i);
             masCell[x][y].setTag(String.valueOf(i));
             /*Тег помогает узнать, какая именно картинка сейчас стоит в кнопке*/
         }
     }
 
-    public void setPic(int x, int y, int id)
-    {
+    public void setPic(int x, int y, int id) {
         /*Ставит картинку по номеру ее айди в необходимую кнопку*/
-        switch(id) {
+        switch (id) {
             case 0: {
                 masCell[x][y].setBackgroundResource(R.drawable.cell0);
                 break;
@@ -123,16 +118,14 @@ public class FiftyActivity extends AppCompatActivity {
                 masCell[x][y].setBackgroundResource(R.drawable.cell15);
                 break;
             }
-            default:
-            {
+            default: {
                 masCell[x][y].setBackgroundResource(R.drawable.cell0);
                 break;
             }
         }
     }
 
-    public void inBut()
-    {
+    public void inBut() {
         /*Заполнение массива и заполнение кнопок*/
         masCell[0][0] = (ImageButton) findViewById(R.id.cell1);
         masCell[0][0].setTag("0");
@@ -199,70 +192,59 @@ public class FiftyActivity extends AppCompatActivity {
         masCell[3][3].setEnabled(false);
     }
 
-    public void setEnab()
-    {
+    public void setEnab() {
         /*Выставление кнопок, на которые можно нажать*/
-        if(emX-1>-1)
-        {
-            masCell[emX-1][emY].setEnabled(true);
+        if (emX - 1 > -1) {
+            masCell[emX - 1][emY].setEnabled(true);
         }
 
-        if(emX+1<4)
-        {
-            masCell[emX+1][emY].setEnabled(true);
+        if (emX + 1 < 4) {
+            masCell[emX + 1][emY].setEnabled(true);
         }
 
-        if(emY-1>-1)
-        {
-            masCell[emX][emY-1].setEnabled(true);
+        if (emY - 1 > -1) {
+            masCell[emX][emY - 1].setEnabled(true);
         }
 
-        if(emY+1<4)
-        {
-            masCell[emX][emY+1].setEnabled(true);
+        if (emY + 1 < 4) {
+            masCell[emX][emY + 1].setEnabled(true);
         }
     }
 
-    public void setUnenab()
-    {
+    public void setUnenab() {
         /*Вновь делает кнопки недействующими*/
-        if(emX-1>-1)
-        {
-            masCell[emX-1][emY].setEnabled(false);
+        if (emX - 1 > -1) {
+            masCell[emX - 1][emY].setEnabled(false);
         }
 
-        if(emX+1<4)
-        {
-            masCell[emX+1][emY].setEnabled(false);
+        if (emX + 1 < 4) {
+            masCell[emX + 1][emY].setEnabled(false);
         }
 
-        if(emY-1>-1)
-        {
-            masCell[emX][emY-1].setEnabled(false);
+        if (emY - 1 > -1) {
+            masCell[emX][emY - 1].setEnabled(false);
         }
 
-        if(emY+1<4)
-        {
-            masCell[emX][emY+1].setEnabled(false);
+        if (emY + 1 < 4) {
+            masCell[emX][emY + 1].setEnabled(false);
         }
     }
 
-    public void change(View v)
-    {
+    public void change(View v) {
         /*Меняет выбранную кнопку с пустой местами*/
-        int x=0, y=0;
-        for(int i =0;i<4;i++) {
+        int x = 0, y = 0;
+        for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
                 if (masCell[i][j].equals(v)) {
-                     x = i;
-                     y = j;
+                    x = i;
+                    y = j;
                     break;
                 }
             }
         }
-        setPic(emX,emY,Integer.parseInt((String)masCell[x][y].getTag()));
+        setPic(emX, emY, Integer.parseInt((String) masCell[x][y].getTag()));
         masCell[emX][emY].setTag(masCell[x][y].getTag());
-        setPic(x,y,0);
+        setPic(x, y, 0);
         masCell[x][y].setTag("0");
         setUnenab();
         emX = x;
@@ -278,8 +260,7 @@ public class FiftyActivity extends AppCompatActivity {
         newFragment.show(getFragmentManager(), "dialog");
     }
 
-    public void cont(View v)
-    {
+    public void cont(View v) {
         MainActivity.progressOfGame = 5;
         Intent intent = new Intent(FiftyActivity.this, GameActivity.class);
         startActivity(intent);

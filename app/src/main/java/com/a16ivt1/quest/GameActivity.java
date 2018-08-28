@@ -7,7 +7,6 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Layout;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -26,35 +25,39 @@ public class GameActivity extends AppCompatActivity {
     Button var3But;
     TextView text;
 
-    int progress=0;
+    int progress = 0;
     DatabaseHelper DbH;
     Cursor c = null; // Необходим для перемешения по базе данных
 
-    int complex;
+    public static final String APP_PREFERENSES = "file";
 
-    public  static final String APP_PREFERENSES = "file";
+    public static final int THIRD_EMPTY = 1;
+    public static final int FIFTH_EMPTY = 2;
+    public static final int SEVENTH_EMPTY = 3;
+
+    public static int DB_VERSION;
 
     private SharedPreferences settings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_game);
 
         progress = MainActivity.progressOfGame;
-        complex = MainActivity.complexityOfGame;
 
         settings = getSharedPreferences(APP_PREFERENSES, Context.MODE_PRIVATE);
 
         // Инициализируем все кнопки и текс вьюверы для удобной работы
-        var1But = (Button)findViewById(R.id.var1But);
-        var2But = (Button)findViewById(R.id.var2But);
-        var3But = (Button)findViewById(R.id.var3But);
-        text = (TextView)findViewById(R.id.text);
+        var1But = (Button) findViewById(R.id.var1But);
+        var2But = (Button) findViewById(R.id.var2But);
+        var3But = (Button) findViewById(R.id.var3But);
+        text = (TextView) findViewById(R.id.text);
 
         // Открываем базу данных
-        DbH = new DatabaseHelper(GameActivity.this);
+       DB_VERSION= 3;
+        DbH = new DatabaseHelper(this);
         try {
             DbH.createDataBase();
         } catch (IOException ioe) {
@@ -76,55 +79,48 @@ public class GameActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onPause()
-    {
+    protected void onPause() {
         super.onPause();
         SharedPreferences.Editor editor = settings.edit();
-        editor.putInt("progressOfGame", progress-1);
+        editor.putInt("progressOfGame", progress - 1);
+        editor.apply();
+        editor = settings.edit();
+        editor.putInt("DB_VERSION", DB_VERSION);
         editor.apply();
     }
 
     @Override
-    protected void onResume()
-    {
+    protected void onResume() {
         super.onResume();
-        if(MainActivity.newGame)
-        {
+        if (MainActivity.newGame) {
             progress = 0;
-            c.moveToFirst();
-            text.setText(c.getString(1));
-            var1But.setText(c.getString(3));
-            var2But.setText(c.getString(5));
-            var3But.setText(c.getString(7));
-            MainActivity.newGame = false;
+            setText(progress);
             return;
-        }
-        else
-        {
+        } else {
 
-            if(settings.contains("progressOfGame"))
-            {
-                progress = settings.getInt("progressOfGame",0);
-                if(MainActivity.progressOfGame >progress)
-                {
-                    c.moveToPosition(MainActivity.progressOfGame-1);
-                }
-                else {
+            if (settings.contains("progressOfGame")) {
+                progress = settings.getInt("progressOfGame", 0);
+                if (MainActivity.progressOfGame > progress) {
+                    progress = MainActivity.progressOfGame;
+                    setText(MainActivity.progressOfGame);
+                    return;
+                } else {
                     if (progress == -1) {
-                        c.moveToFirst();
+                        progress = 0;
+                        MainActivity.progressOfGame = 0;
+                        setText(0);
                         return;
                     }
-                    c.moveToPosition(progress);
                 }
-            }
-            else
-            {
+            } else {
                 progress = 0;
-                c.moveToFirst();
+                setText(progress);
+                return;
             }
+
         }
-        if(c.getCount()<progress)
-        {
+
+        if (c.getCount() < progress) {
             text.setText("Конец истории");
             var1But.setEnabled(false);
             var1But.setVisibility(View.INVISIBLE);
@@ -134,18 +130,12 @@ public class GameActivity extends AppCompatActivity {
             var3But.setVisibility(View.INVISIBLE);
             return;
         }
-        else
-        {
-            text.setText(c.getString(1));
-            var1But.setText(c.getString(3));
-            var2But.setText(c.getString(5));
-            var3But.setText(c.getString(7));
-        }
+
     }
 
     public void nextText(View view) {
         /* При нажатии на определенную кнопку
-        * Считывается следующая позиция для курсора*/
+         * Считывается следующая позиция для курсора*/
         int newProgress;
         switch (view.getId()) {
             case R.id.var1But:
@@ -162,21 +152,19 @@ public class GameActivity extends AppCompatActivity {
         }
 
         /* Далее несколько проверок на поля базы данных
-        * Если ее поле с выбором пустое, то эта кнопка не будет отобраться за экране выбора
-        * Если больше нет истории, то будет выведен "Конец истории"*/
-        if(newProgress == 1000)
-        {
+         * Если ее поле с выбором пустое, то эта кнопка не будет отобраться за экране выбора
+         * Если больше нет истории, то будет выведен "Конец истории"*/
+        if (newProgress == 1000) {
             //progress++;
             Intent intent = new Intent(GameActivity.this, FiftyActivity.class);
             startActivity(intent);
             this.finish();
             return;
-
         }
+
         MainActivity.progressOfGame = newProgress - 1;
         progress = newProgress;
-        if(c.isNull(progress - 1))
-        {
+        if (c.isNull(progress)) {
             text.setText("Конец истории");
             var1But.setEnabled(false);
             var1But.setVisibility(View.INVISIBLE);
@@ -187,46 +175,69 @@ public class GameActivity extends AppCompatActivity {
             progress = 1000;
             MainActivity.progressOfGame = 1000;
             return;
+        } else {
+            setText(progress);
         }
-        else
-        {
-            c.moveToPosition(progress-1);
+    }
+
+    public void setText(int pos) {
+        int i = c.getCount();
+        if (pos == 0) {
+            c.moveToFirst();
+        } else {
+            c.moveToPosition(pos);
         }
-        if(c.getString(1) == null) {
+        if (c.getString(1) == null) {
             text.setText("Конец истории");
-        }
-        else {
+        } else {
             text.setText(c.getString(1));
         }
-        if(c.getString(3)== null)
-        {
-            var1But.setEnabled(false);
-            var1But.setVisibility(View.INVISIBLE);
-        }
-        else{
+        if (c.getString(3) == null) {
+            emptyBut(THIRD_EMPTY);
+        } else {
             var1But.setText(c.getString(3));
             var1But.setEnabled(true);
             var1But.setVisibility(View.VISIBLE);
         }
-        if(c.getString(5)== null)
-        {
-            var2But.setEnabled(false);
-            var2But.setVisibility(View.INVISIBLE);
-        }
-        else{
+        if (c.getString(5) == null) {
+            emptyBut(FIFTH_EMPTY);
+        } else {
             var2But.setText(c.getString(5));
             var2But.setEnabled(true);
             var2But.setVisibility(View.VISIBLE);
         }
-        if(c.getString(7)== null)
-        {
-            var3But.setEnabled(false);
-            var3But.setVisibility(View.VISIBLE);
-        }
-        else{
+        if (c.getString(7) == null) {
+            emptyBut(SEVENTH_EMPTY);
+        } else {
             var3But.setText(c.getString(7));
             var3But.setEnabled(true);
             var3But.setVisibility(View.VISIBLE);
         }
+
     }
+
+    public void emptyBut(int idBut) {
+        switch (idBut) {
+            case 1: {
+                var1But.setEnabled(false);
+                var1But.setVisibility(View.INVISIBLE);
+                break;
+            }
+            case 2: {
+                var2But.setEnabled(false);
+                var2But.setVisibility(View.INVISIBLE);
+                break;
+            }
+            case 3: {
+                var3But.setEnabled(false);
+                var3But.setVisibility(View.INVISIBLE);
+                break;
+            }
+            default: {
+
+            }
+        }
+    }
+
+
 }

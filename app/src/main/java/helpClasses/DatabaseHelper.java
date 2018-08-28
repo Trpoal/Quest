@@ -1,6 +1,7 @@
 package helpClasses;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
@@ -9,64 +10,68 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 import com.a16ivt1.quest.GameActivity;
+import com.a16ivt1.quest.MainActivity;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
+import static com.a16ivt1.quest.GameActivity.APP_PREFERENSES;
+
 /* Класс для работы с базой данных */
 
 public class DatabaseHelper extends SQLiteOpenHelper {
-    String DB_PATH = null;
-    private static String DB_NAME = "projectSQL.db";
-    private static int DB_VERSION = 1;
+    private static String DB_PATH = null;
+    private static String DB_NAME = "Quest.db";
+    private static int DB_VERSION = 3;
     private SQLiteDatabase myDataBase;
     private final Context myContext;
-    private boolean update = false;
 
-    public DatabaseHelper(GameActivity context) {
+
+    public DatabaseHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
         this.myContext = context;
-        this.DB_PATH = "/data/data/" + context.getPackageName() + "/" + "databases/";
+        this.DB_PATH = this.myContext.getDatabasePath(DB_NAME).getAbsolutePath();
         Log.e("Path 1", DB_PATH);
     }
 
 
     public void createDataBase() throws IOException {
         boolean dbExist = checkDataBase();
-        if (dbExist) {
-            if(update)
+
+        SQLiteDatabase db_Read = null;
+
+        if (!dbExist) {
+            synchronized (this) {
+
+                db_Read = this.getReadableDatabase();
+                Log.e("Path 2", this.getReadableDatabase().getPath());
+                db_Read.close();
+
                 copyDataBase();
-        } else {
-            this.getReadableDatabase();
-            try {
-                copyDataBase();
-            } catch (IOException e) {
-                throw new Error("Error copying database");
+                Log.v("copyDataBase---", "Successfully");
             }
         }
+
     }
 
     private boolean checkDataBase() {
         SQLiteDatabase checkDB = null;
         try {
+
             String myPath = DB_PATH + DB_NAME;
             checkDB = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
-            int f = checkDB.getVersion();
-            /*Сравнение старой версии базы данных в программе
-            * С новой версией из файла
-            * Если версии различаются, то база данных обновится
-            * Если версии одинаковые, то программа запустит старую базу */
-            if (DB_VERSION < f) {
-                DB_VERSION=f;
-                update = true;
-            }
+
+
+            //onUpgrade(checkDB, GameActivity.DB_VERSION, checkDB.getVersion());
         } catch (SQLiteException e) {
         }
+
         if (checkDB != null) {
             checkDB.close();
         }
+
         return checkDB != null ? true : false;
     }
 
@@ -105,6 +110,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        if (newVersion > oldVersion) {
+            try {
+                copyDataBase();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     public Cursor query(String table, String[] columns, String selection, String[] selectionArgs, String groupBy, String having, String orderBy) {

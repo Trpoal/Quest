@@ -20,28 +20,26 @@ import java.io.InputStreamReader;
 public class MainActivity extends AppCompatActivity {
 
     static int progressOfGame;   //Прогресс квеста
-    public static int complexityOfGame = 0;    //Сложность мини-игр
 
     private static final int GAME_ACTIVITY = 1;
     private static final int MINI_GAMES_ACTIVITY = 2;
     public static boolean res = false;
 
     Button continueButton;
-    TextView v;
 
     public static boolean newGame = false;
 
 
     /*В файле хранится информация о моменте в квесте
-    * О сложности мини-игр
-    * О мини играх, которые уже доступны для прохождения*/
+     * О сложности мини-игр
+     * О мини играх, которые уже доступны для прохождения*/
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
 
         continueButton = (Button) findViewById(R.id.continueButton);
@@ -59,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.newGameButton: {
                 newGame = true;
                 /*Создается и открывается новое диалоговое окно
-                * Узнается сложность мини-игр*/
+                 * Узнается сложность мини-игр*/
                 startAct(GAME_ACTIVITY);
                 break;
             }
@@ -88,7 +86,6 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
-
 
 
 }
