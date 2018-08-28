@@ -18,7 +18,9 @@ public class FiveInRowActivity extends AppCompatActivity {
 
     ArrayList<ImageButton> cellArray = new ArrayList<>(); // Массив всех кнопок на поле
     Works work = new Works();
-
+    int l = 0;
+    int m = 0;
+    int st = 0;
     boolean que = true;
 
     @Override
@@ -39,14 +41,14 @@ public class FiveInRowActivity extends AppCompatActivity {
         /*Объявление всех клеток с xml файла*/
         cellArray.add((ImageButton) findViewById(R.id.cell0));
         cellArray.add((ImageButton) findViewById(R.id.cell1));
-        cellArray.add((ImageButton) findViewById(R.id.cell1));
         cellArray.add((ImageButton) findViewById(R.id.cell2));
         cellArray.add((ImageButton) findViewById(R.id.cell3));
         cellArray.add((ImageButton) findViewById(R.id.cell4));
         cellArray.add((ImageButton) findViewById(R.id.cell5));
         cellArray.add((ImageButton) findViewById(R.id.cell6));
+        cellArray.add((ImageButton) findViewById(R.id.cell7));
         cellArray.add((ImageButton) findViewById(R.id.cell8));
-        cellArray.add((ImageButton) findViewById(R.id.cell8));
+        cellArray.add((ImageButton) findViewById(R.id.cell9));
         cellArray.add((ImageButton) findViewById(R.id.cell10));
         cellArray.add((ImageButton) findViewById(R.id.cell11));
         cellArray.add((ImageButton) findViewById(R.id.cell12));
@@ -54,7 +56,7 @@ public class FiveInRowActivity extends AppCompatActivity {
         cellArray.add((ImageButton) findViewById(R.id.cell14));
         cellArray.add((ImageButton) findViewById(R.id.cell15));
         cellArray.add((ImageButton) findViewById(R.id.cell16));
-        cellArray.add((ImageButton) findViewById(R.id.cell16));
+        cellArray.add((ImageButton) findViewById(R.id.cell17));
         cellArray.add((ImageButton) findViewById(R.id.cell18));
         cellArray.add((ImageButton) findViewById(R.id.cell19));
         cellArray.add((ImageButton) findViewById(R.id.cell20));
@@ -103,9 +105,7 @@ public class FiveInRowActivity extends AppCompatActivity {
         cellArray.add((ImageButton) findViewById(R.id.cell63));
 
     }
-    int l = 0;
-    int m = 0;
-    int st = 0;
+
 
     public void choseCell(View cell) {
         if (st == 0) {
@@ -126,6 +126,8 @@ public class FiveInRowActivity extends AppCompatActivity {
                 }
                 z++;
             }
+            System.out.println("\n");
+            work.vivodM();
             que = !que;
         }
 
@@ -144,10 +146,9 @@ public class FiveInRowActivity extends AppCompatActivity {
                 }
                 z++;
             }
+            System.out.println("\n");
+            work.vivodM();
             que = !que;
-
         }
     }
-
-
 }

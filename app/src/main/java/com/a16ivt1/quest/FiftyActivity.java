@@ -233,6 +233,9 @@ public class FiftyActivity extends AppCompatActivity {
     public void change(View v) {
         /*Меняет выбранную кнопку с пустой местами*/
         int x = 0, y = 0;
+        int p=0;
+        boolean b = false;
+        int z=0;
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
                 if (masCell[i][j].equals(v)) {
@@ -250,7 +253,15 @@ public class FiftyActivity extends AppCompatActivity {
         emX = x;
         emY = y;
         setEnab();
-
+        for (int i=0;i<4;i++){
+            for (int j=0;j<4;j++){
+                z=Integer.parseInt((String) masCell[i][j].getTag());
+                if (z==(i*4+j)) p++;
+                System.out.println(z);
+            }
+        }
+        if (p==16) b=true;
+        System.out.println(b);
     }
 
     public void infoClick(View view) {

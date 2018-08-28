@@ -589,28 +589,28 @@ public class Works
     {
         int k = 0;
         if (possibleG(i,j)) k+=AttackG(i,j, '2');
-        k+=(AttackG(i,j,'1')*0.9);
+        k+=AttackG(i,j,'1');
         return k;
     }
     public int powerVertical(int i,int j)
     {
         int k = 0;
         if (possibleV(i,j)) k+=AttackV(i,j,'2');
-        k+=(AttackV(i,j,'1')*0.9);
+        k+=AttackV(i,j,'1');
         return k;
     }
     public int powerDiagonalG(int i,int j)
     {
         int k = 0;
         if (possibleDG(i,j,'1')) k+=AttackDG(i,j,'2');
-        if (possibleDG(i,j,'2')) k+=(AttackDG(i,j,'1')*0.9);
+        if (possibleDG(i,j,'2')) k+=AttackDG(i,j,'1');
         return k;
     }
     public int powerDiagonalP(int i,int j)
     {
         int k = 0;
         if (possibleDP(i,j,'1')) k+=AttackDP(i,j,'2');
-        if (possibleDP(i,j,'2')) k+=(AttackDP(i,j,'1')*0.9);
+        if (possibleDP(i,j,'2')) k+=AttackDP(i,j,'1');
         return k;
     }
     public int powerOfStep(int i, int j)
@@ -620,6 +620,7 @@ public class Works
         k+=powerVertical(i,j);
         k+=powerDiagonalG(i,j);
         k+=powerDiagonalP(i,j);
+        vivodM();
         return k;
     }
     public int StepAi()
