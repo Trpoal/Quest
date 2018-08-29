@@ -24,7 +24,7 @@ import static com.a16ivt1.quest.GameActivity.APP_PREFERENSES;
 public class DatabaseHelper extends SQLiteOpenHelper {
     private static String DB_PATH = null;
     private static String DB_NAME = "Quest.db";
-    private static int DB_VERSION = 3;
+    private static int DB_VERSION = 6;
     private SQLiteDatabase myDataBase;
     private final Context myContext;
 
@@ -53,6 +53,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 Log.v("copyDataBase---", "Successfully");
             }
         }
+        else
+        {
+            this.getReadableDatabase();
+        }
 
     }
 
@@ -62,8 +66,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
             String myPath = DB_PATH + DB_NAME;
             checkDB = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
-
-
             //onUpgrade(checkDB, GameActivity.DB_VERSION, checkDB.getVersion());
         } catch (SQLiteException e) {
         }

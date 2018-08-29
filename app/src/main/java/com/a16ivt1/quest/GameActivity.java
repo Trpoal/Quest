@@ -161,20 +161,16 @@ public class GameActivity extends AppCompatActivity {
 
         MainActivity.progressOfGame = newProgress - 1;
         progress = newProgress;
-        if (c.isNull(progress)) {
+        if( progress>c.getCount())
+        {
             text.setText("Конец истории");
-            var1But.setEnabled(false);
-            var1But.setVisibility(View.INVISIBLE);
-            var2But.setEnabled(false);
-            var2But.setVisibility(View.INVISIBLE);
-            var3But.setEnabled(false);
-            var3But.setVisibility(View.INVISIBLE);
-            progress = 1000;
-            MainActivity.progressOfGame = 1000;
+            emptyBut(FIFTH_EMPTY);
+            emptyBut(THIRD_EMPTY);
+            emptyBut(SEVENTH_EMPTY);
             return;
-        } else {
-            setText(progress);
         }
+        setText(progress);
+
     }
 
     public void setText(int pos) {
