@@ -5,9 +5,12 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import helpClasses.DialogFragment;
@@ -233,9 +236,7 @@ public class FiftyActivity extends AppCompatActivity {
     public void change(View v) {
         /*Меняет выбранную кнопку с пустой местами*/
         int x = 0, y = 0;
-        int p=0;
         boolean b = false;
-        int z=0;
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
                 if (masCell[i][j].equals(v)) {
@@ -253,15 +254,31 @@ public class FiftyActivity extends AppCompatActivity {
         emX = x;
         emY = y;
         setEnab();
+        finishGame();
+    }
+
+    public void finishGame()
+    {
+        int z = 0, p = 1;
         for (int i=0;i<4;i++){
             for (int j=0;j<4;j++){
                 z=Integer.parseInt((String) masCell[i][j].getTag());
-                if (z==(i*4+j)) p++;
-                System.out.println(z);
+                Log.v("z =", String.valueOf(z));
+                Log.v("p = ", String.valueOf(p));
+                if (z==(i*4+j+1)) p++;
             }
         }
-        if (p==16) b=true;
-        System.out.println(b);
+        Log.v("p = ", String.valueOf(p));
+        if (p==16)
+        {
+            Button cont = findViewById(R.id.cont);
+            cont.setVisibility(View.VISIBLE);
+            TextView winText = findViewById(R.id.resultText2);
+            winText.setVisibility(View.VISIBLE);
+            winText.setText(getString(R.string.win));
+            ImageView finalPic = findViewById(R.id.finalPic);
+            finalPic.setVisibility(View.VISIBLE);
+        }
     }
 
     public void infoClick(View view) {
@@ -279,4 +296,13 @@ public class FiftyActivity extends AppCompatActivity {
 
     }
 
+    public void win(View view) {
+        Button cont = findViewById(R.id.cont);
+        cont.setVisibility(View.VISIBLE);
+        TextView winText = findViewById(R.id.resultText2);
+        winText.setVisibility(View.VISIBLE);
+        winText.setText(getString(R.string.win));
+        ImageView finalPic = findViewById(R.id.finalPic);
+        finalPic.setVisibility(View.VISIBLE);
+    }
 }

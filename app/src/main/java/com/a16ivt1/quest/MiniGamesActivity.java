@@ -1,6 +1,7 @@
 package com.a16ivt1.quest;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -19,11 +20,9 @@ public class MiniGamesActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_mini_games);
-
-        othelloBut = (ImageButton) findViewById(R.id.othelloBut);
-        othelloText = (TextView) findViewById(R.id.othelloText);
     }
 
 
@@ -32,11 +31,6 @@ public class MiniGamesActivity extends AppCompatActivity {
         // Пока что они всегда доступны, но в скором времени я это доработаю
         Intent intent;
         switch (v.getId()) {
-            case R.id.othelloBut: {
-                intent = new Intent(MiniGamesActivity.this, OthelloActivity.class);
-                startActivity(intent);
-                break;
-            }
             case R.id.fiveInRowBut: {
                 intent = new Intent(MiniGamesActivity.this, FiveInRowActivity.class);
                 startActivity(intent);
