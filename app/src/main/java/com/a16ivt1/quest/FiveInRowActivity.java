@@ -129,9 +129,11 @@ public class FiveInRowActivity extends AppCompatActivity {
                 if (!k.isEnabled()) {
                     m = z;
                     l = work.stepMan(m, que);
+                    if (l==1) break;
                 }
                 z++;
             }
+            work.vivodM();
             que = !que;
         }
 
@@ -147,9 +149,11 @@ public class FiveInRowActivity extends AppCompatActivity {
                 if (!k.isEnabled()) {
                     m = z;
                     l = work.stepMan(m, que);
+                    if (l==2) break;
                 }
                 z++;
             }
+            work.vivodM();
             que = !que;
         }
         switch (l) {
