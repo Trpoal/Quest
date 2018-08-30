@@ -84,7 +84,7 @@ public class GameActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         SharedPreferences.Editor editor = settings.edit();
-        editor.putInt("progressOfGame", progress - 1);
+        editor.putInt("progressOfGame", progress);
         editor.apply();
     }
 
@@ -94,6 +94,7 @@ public class GameActivity extends AppCompatActivity {
         if (MainActivity.newGame) {
             progress = 0;
             setText(progress);
+            MainActivity.newGame = false;
             return;
         } else {
 
@@ -109,6 +110,10 @@ public class GameActivity extends AppCompatActivity {
                         MainActivity.progressOfGame = 0;
                         setText(0);
                         return;
+                    }
+                    else
+                    {
+                        setText(progress);
                     }
                 }
             } else {
