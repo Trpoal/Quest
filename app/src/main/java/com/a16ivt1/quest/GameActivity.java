@@ -152,7 +152,7 @@ public class GameActivity extends AppCompatActivity {
 
         /* Далее несколько проверок на поля базы данных
          * Если ее поле с выбором пустое, то эта кнопка не будет отобраться за экране выбора
-         * Если больше нет истории, то будет выведен "Конец истории"*/
+         * Если больше нет истории, то будет выведен "Конец истории" */
         if (newProgress == 1000) {
             //progress++;
             Intent intent = new Intent(GameActivity.this, FiftyActivity.class);
@@ -233,6 +233,7 @@ public class GameActivity extends AppCompatActivity {
             }
         }
     }
+
 
 
 }
