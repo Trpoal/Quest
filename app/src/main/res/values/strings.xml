@@ -9,7 +9,7 @@
     <string name="fiveInRow">5 в ряд</string>
     <string name="fifty">Пятнашки</string>
     <string name="back">Назад</string>
-    <string name="Retry">Повторить</string>
+    <string name="Retry">Заново</string>
     <string name="lost">ВЫ ПРОИГРАЛИ</string>
     <string name="win">ВЫ ВЫИГРАЛИ</string>
 </resources>

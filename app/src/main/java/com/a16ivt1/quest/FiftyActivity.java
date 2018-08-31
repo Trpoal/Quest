@@ -35,6 +35,16 @@ public class FiftyActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onPause()
+    {
+        super.onPause();
+        if(MainActivity.modeOfGame == MainActivity.ON_QUEST_GAME)
+        {
+            MainActivity.modeOfGame = MainActivity.NO_QUEST_GAME;
+        }
+    }
+
     public void genField() {
         /*Расставляет картинки в рандомном порядке на поле*/
         for (int i = 0; i < 16; i++) {
@@ -296,13 +306,8 @@ public class FiftyActivity extends AppCompatActivity {
         this.finish();
     }
 
-    public void win(View view) {
-        Button cont = findViewById(R.id.cont);
-        cont.setVisibility(View.VISIBLE);
-        TextView winText = findViewById(R.id.resultText2);
-        winText.setVisibility(View.VISIBLE);
-        winText.setText(getString(R.string.win));
-        ImageView finalPic = findViewById(R.id.finalPic);
-        finalPic.setVisibility(View.VISIBLE);
+    public void retry(View view) {
+        finish();
+        startActivity(getIntent());
     }
 }

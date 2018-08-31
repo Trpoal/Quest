@@ -171,6 +171,15 @@ public class GameActivity extends AppCompatActivity {
             this.finish();
             return;
         }
+        if(newProgress == 1001)
+        {
+            MainActivity.progressOfGame = progress;
+            MainActivity.modeOfGame = MainActivity.ON_QUEST_GAME;
+            Intent intent = new Intent(GameActivity.this, FiveInRowActivity.class);
+            startActivity(intent);
+            this.finish();
+            return;
+        }
 
         MainActivity.progressOfGame = newProgress - 1;
         progress = newProgress;

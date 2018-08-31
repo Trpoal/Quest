@@ -1,5 +1,6 @@
 package com.a16ivt1.quest;
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,6 +8,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -32,9 +34,17 @@ public class FiveInRowActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_five_in_row);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if (MainActivity.modeOfGame == MainActivity.ON_QUEST_GAME) {
+            MainActivity.modeOfGame = MainActivity.NO_QUEST_GAME;
+        }
     }
 
     public void infoClick(View view) {
@@ -129,7 +139,7 @@ public class FiveInRowActivity extends AppCompatActivity {
                 if (!k.isEnabled()) {
                     m = z;
                     l = work.stepMan(m, que);
-                    if (l==1) break;
+                    if (l == 1) break;
                 }
                 z++;
             }
@@ -148,27 +158,47 @@ public class FiveInRowActivity extends AppCompatActivity {
                 if (!k.isEnabled()) {
                     m = z;
                     l = work.stepMan(m, que);
-                    if (l==2) break;
+                    if (l == 2) break;
                 }
                 z++;
             }
             que = !que;
         }
-        switch (l) {
-            case 1: {
-                TextView lostText = findViewById(R.id.resultText);
-                lostText.setVisibility(View.VISIBLE);
-                lostText.setText(getString(R.string.win));
-                break;
+        if (l != 0) {
+            if (MainActivity.modeOfGame == MainActivity.ON_QUEST_GAME) {
+                Button cont = findViewById(R.id.contin);
+                cont.setVisibility(View.VISIBLE);
+                MainActivity.modeOfGame = MainActivity.NO_QUEST_GAME;
             }
-            case 2: {
-                Button retryBut = findViewById(R.id.retry);
-                retryBut.setVisibility(View.VISIBLE);
-                TextView lostText = findViewById(R.id.resultText);
-                lostText.setVisibility(View.VISIBLE);
-                lostText.setText(getString(R.string.lost));
-                break;
+            switch (l) {
+                case 1: {
+                    TextView lostText = findViewById(R.id.resultText);
+                    lostText.setVisibility(View.VISIBLE);
+                    lostText.setText(getString(R.string.win));
+                    break;
+                }
+                case 2: {
+                    Button retryBut = findViewById(R.id.retry);
+                    retryBut.setVisibility(View.VISIBLE);
+                    TextView lostText = findViewById(R.id.resultText);
+                    lostText.setVisibility(View.VISIBLE);
+                    lostText.setText(getString(R.string.lost));
+                    break;
+                }
             }
         }
+
+    }
+
+    public void cont(View view) {
+        MainActivity.progressOfGame++;
+        Intent intent = new Intent(FiveInRowActivity.this, GameActivity.class);
+        startActivity(intent);
+        this.finish();
+    }
+
+    public void retry(View view) {
+        finish();
+        startActivity(getIntent());
     }
 }
