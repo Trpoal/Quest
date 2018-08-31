@@ -8,9 +8,11 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import java.io.IOException;
@@ -56,6 +58,7 @@ public class GameActivity extends AppCompatActivity {
         var2But = (Button) findViewById(R.id.var2But);
         var3But = (Button) findViewById(R.id.var3But);
         text = (TextView) findViewById(R.id.text);
+        text.setMovementMethod(new ScrollingMovementMethod());
 
         // Открываем базу данных
        DB_VERSION= 3;

@@ -8,12 +8,11 @@
 
     <ImageView
         android:id="@+id/back2"
-        android:layout_width="381dp"
-        android:layout_height="570dp"
+        android:layout_width="422dp"
+        android:layout_height="wrap_content"
         android:background="@drawable/ot_pic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -21,36 +20,33 @@
         android:id="@+id/infoBut"
         android:layout_width="47dp"
         android:layout_height="49dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
         android:background="@drawable/info_pic"
         android:onClick="infoClick"
         app:layout_constraintBottom_toTopOf="@+id/field"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.952"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.262" />
 
     <ImageView
         android:id="@+id/field"
-        android:layout_width="315dp"
-        android:layout_height="302dp"
+        android:layout_width="0dp"
+        android:layout_height="369dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:background="@drawable/five_in_row_bag"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.497" />
+        app:layout_constraintVertical_bias="0.554" />
 
     <ImageButton
         android:id="@+id/cell0"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
+        android:layout_width="38dp"
+        android:layout_height="39dp"
         android:background="@drawable/five_in_row_cell"
         android:onClick="choseCell"
         app:layout_constraintBottom_toBottomOf="@+id/field"
@@ -62,59 +58,47 @@
 
     <ImageButton
         android:id="@+id/cell1"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_width="39dp"
+        android:layout_height="39dp"
         android:background="@drawable/five_in_row_cell"
         android:onClick="choseCell"
         app:layout_constraintBottom_toBottomOf="@+id/field"
         app:layout_constraintEnd_toEndOf="@+id/field"
-        app:layout_constraintHorizontal_bias="0.12"
+        app:layout_constraintHorizontal_bias="0.14"
         app:layout_constraintStart_toStartOf="@+id/cell0"
         app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.00999999" />
 
     <ImageButton
         android:id="@+id/cell2"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_width="38dp"
+        android:layout_height="39dp"
         android:background="@drawable/five_in_row_cell"
         android:onClick="choseCell"
         app:layout_constraintBottom_toBottomOf="@+id/field"
         app:layout_constraintEnd_toEndOf="@+id/field"
-        app:layout_constraintHorizontal_bias="0.27"
+        app:layout_constraintHorizontal_bias="0.28"
         app:layout_constraintStart_toStartOf="@+id/cell0"
         app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.009" />
 
     <ImageButton
         android:id="@+id/cell3"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_width="38dp"
+        android:layout_height="39dp"
         android:background="@drawable/five_in_row_cell"
         android:onClick="choseCell"
         app:layout_constraintBottom_toBottomOf="@+id/field"
         app:layout_constraintEnd_toEndOf="@+id/field"
-        app:layout_constraintHorizontal_bias="0.417"
+        app:layout_constraintHorizontal_bias="0.425"
         app:layout_constraintStart_toStartOf="@+id/cell0"
         app:layout_constraintTop_toTopOf="@+id/field"
-        app:layout_constraintVertical_bias="0.009" />
+        app:layout_constraintVertical_bias="0.00999999" />
 
     <ImageButton
         android:id="@+id/cell4"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_width="38dp"
+        android:layout_height="39dp"
         android:background="@drawable/five_in_row_cell"
         android:onClick="choseCell"
         app:layout_constraintBottom_toBottomOf="@+id/field"
@@ -126,40 +110,34 @@
 
     <ImageButton
         android:id="@+id/cell5"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_width="38dp"
+        android:layout_height="39dp"
         android:background="@drawable/five_in_row_cell"
         android:onClick="choseCell"
         app:layout_constraintBottom_toBottomOf="@+id/field"
         app:layout_constraintEnd_toEndOf="@+id/field"
-        app:layout_constraintHorizontal_bias="0.715"
+        app:layout_constraintHorizontal_bias="0.71"
         app:layout_constraintStart_toStartOf="@+id/cell0"
         app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.009" />
 
     <ImageButton
         android:id="@+id/cell6"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_width="39dp"
+        android:layout_height="39dp"
         android:background="@drawable/five_in_row_cell"
         android:onClick="choseCell"
         app:layout_constraintBottom_toBottomOf="@+id/field"
         app:layout_constraintEnd_toEndOf="@+id/field"
-        app:layout_constraintHorizontal_bias="0.87"
+        app:layout_constraintHorizontal_bias="0.85"
         app:layout_constraintStart_toStartOf="@+id/cell0"
         app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.009" />
 
     <ImageButton
         android:id="@+id/cell7"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
-        android:layout_marginBottom="8dp"
+        android:layout_width="38dp"
+        android:layout_height="39dp"
         android:background="@drawable/five_in_row_cell"
         android:onClick="choseCell"
         app:layout_constraintBottom_toBottomOf="@+id/field"
@@ -171,8 +149,8 @@
 
     <ImageButton
         android:id="@+id/cell8"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
+        android:layout_width="38dp"
+        android:layout_height="39dp"
         android:background="@drawable/five_in_row_cell"
         android:onClick="choseCell"
         app:layout_constraintBottom_toBottomOf="@+id/field"
@@ -180,12 +158,12 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/cell0"
         app:layout_constraintTop_toTopOf="@+id/field"
-        app:layout_constraintVertical_bias="0.14999998" />
+        app:layout_constraintVertical_bias="0.15" />
 
     <ImageButton
         android:id="@+id/cell9"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
+        android:layout_width="39dp"
+        android:layout_height="39dp"
         android:background="@drawable/five_in_row_cell"
         android:onClick="choseCell"
         app:layout_constraintBottom_toBottomOf="@+id/field"
@@ -193,12 +171,12 @@
         app:layout_constraintHorizontal_bias="0.138"
         app:layout_constraintStart_toStartOf="@+id/cell0"
         app:layout_constraintTop_toTopOf="@+id/field"
-        app:layout_constraintVertical_bias="0.14999998" />
+        app:layout_constraintVertical_bias="0.15" />
 
     <ImageButton
         android:id="@+id/cell10"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
+        android:layout_width="38dp"
+        android:layout_height="39dp"
         android:background="@drawable/five_in_row_cell"
         android:onClick="choseCell"
         app:layout_constraintBottom_toBottomOf="@+id/field"
@@ -206,38 +184,36 @@
         app:layout_constraintHorizontal_bias="0.28"
         app:layout_constraintStart_toStartOf="@+id/cell0"
         app:layout_constraintTop_toTopOf="@+id/field"
-        app:layout_constraintVertical_bias="0.14999998" />
+        app:layout_constraintVertical_bias="0.15" />
 
     <ImageButton
         android:id="@+id/cell11"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
+        android:layout_width="38dp"
+        android:layout_height="39dp"
         android:background="@drawable/five_in_row_cell"
         android:onClick="choseCell"
-        app:layout_constraintBottom_toBottomOf="@+id/field"
-        app:layout_constraintEnd_toEndOf="@+id/field"
-        app:layout_constraintHorizontal_bias="0.42"
-        app:layout_constraintStart_toStartOf="@+id/cell0"
-        app:layout_constraintTop_toTopOf="@+id/field"
-        app:layout_constraintVertical_bias="0.14999998" />
+        app:layout_constraintBottom_toTopOf="@+id/cell19"
+        app:layout_constraintEnd_toStartOf="@+id/cell12"
+        app:layout_constraintStart_toEndOf="@+id/cell10"
+        app:layout_constraintTop_toBottomOf="@+id/cell3" />
 
     <ImageButton
         android:id="@+id/cell12"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
+        android:layout_width="38dp"
+        android:layout_height="39dp"
         android:background="@drawable/five_in_row_cell"
         android:onClick="choseCell"
         app:layout_constraintBottom_toBottomOf="@+id/field"
         app:layout_constraintEnd_toEndOf="@+id/field"
-        app:layout_constraintHorizontal_bias="0.56"
+        app:layout_constraintHorizontal_bias="0.57"
         app:layout_constraintStart_toStartOf="@+id/cell0"
         app:layout_constraintTop_toTopOf="@+id/field"
-        app:layout_constraintVertical_bias="0.14999998" />
+        app:layout_constraintVertical_bias="0.15" />
 
     <ImageButton
         android:id="@+id/cell13"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
+        android:layout_width="39dp"
+        android:layout_height="39dp"
         android:background="@drawable/five_in_row_cell"
         android:onClick="choseCell"
         app:layout_constraintBottom_toBottomOf="@+id/field"
@@ -245,12 +221,12 @@
         app:layout_constraintHorizontal_bias="0.71"
         app:layout_constraintStart_toStartOf="@+id/cell0"
         app:layout_constraintTop_toTopOf="@+id/field"
-        app:layout_constraintVertical_bias="0.14999998" />
+        app:layout_constraintVertical_bias="0.15" />
 
     <ImageButton
         android:id="@+id/cell14"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
+        android:layout_width="39dp"
+        android:layout_height="39dp"
         android:background="@drawable/five_in_row_cell"
         android:onClick="choseCell"
         app:layout_constraintBottom_toBottomOf="@+id/field"
@@ -258,12 +234,12 @@
         app:layout_constraintHorizontal_bias="0.85"
         app:layout_constraintStart_toStartOf="@+id/cell0"
         app:layout_constraintTop_toTopOf="@+id/field"
-        app:layout_constraintVertical_bias="0.14999998" />
+        app:layout_constraintVertical_bias="0.15" />
 
     <ImageButton
         android:id="@+id/cell15"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
+        android:layout_width="38dp"
+        android:layout_height="39dp"
         android:background="@drawable/five_in_row_cell"
         android:onClick="choseCell"
         app:layout_constraintBottom_toBottomOf="@+id/field"
@@ -271,12 +247,12 @@
         app:layout_constraintHorizontal_bias="0.991"
         app:layout_constraintStart_toStartOf="@+id/cell0"
         app:layout_constraintTop_toTopOf="@+id/field"
-        app:layout_constraintVertical_bias="0.14999998" />
+        app:layout_constraintVertical_bias="0.15" />
 
     <ImageButton
         android:id="@+id/cell16"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
+        android:layout_width="39dp"
+        android:layout_height="39dp"
         android:background="@drawable/five_in_row_cell"
         android:onClick="choseCell"
         app:layout_constraintBottom_toBottomOf="@+id/field"
@@ -284,12 +260,12 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/cell0"
         app:layout_constraintTop_toTopOf="@+id/field"
-        app:layout_constraintVertical_bias="0.29000002" />
+        app:layout_constraintVertical_bias="0.29" />
 
     <ImageButton
         android:id="@+id/cell17"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
+        android:layout_width="39dp"
+        android:layout_height="39dp"
         android:background="@drawable/five_in_row_cell"
         android:onClick="choseCell"
         app:layout_constraintBottom_toBottomOf="@+id/field"
@@ -297,12 +273,12 @@
         app:layout_constraintHorizontal_bias="0.14"
         app:layout_constraintStart_toStartOf="@+id/cell0"
         app:layout_constraintTop_toTopOf="@+id/field"
-        app:layout_constraintVertical_bias="0.29000002" />
+        app:layout_constraintVertical_bias="0.29" />
 
     <ImageButton
         android:id="@+id/cell18"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
+        android:layout_width="39dp"
+        android:layout_height="39dp"
         android:background="@drawable/five_in_row_cell"
         android:onClick="choseCell"
         app:layout_constraintBottom_toBottomOf="@+id/field"
@@ -310,38 +286,38 @@
         app:layout_constraintHorizontal_bias="0.28"
         app:layout_constraintStart_toStartOf="@+id/cell0"
         app:layout_constraintTop_toTopOf="@+id/field"
-        app:layout_constraintVertical_bias="0.29000002" />
+        app:layout_constraintVertical_bias="0.29" />
 
     <ImageButton
         android:id="@+id/cell19"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
+        android:layout_width="38dp"
+        android:layout_height="39dp"
         android:background="@drawable/five_in_row_cell"
         android:onClick="choseCell"
         app:layout_constraintBottom_toBottomOf="@+id/field"
         app:layout_constraintEnd_toEndOf="@+id/field"
-        app:layout_constraintHorizontal_bias="0.42"
+        app:layout_constraintHorizontal_bias="0.425"
         app:layout_constraintStart_toStartOf="@+id/cell0"
         app:layout_constraintTop_toTopOf="@+id/field"
-        app:layout_constraintVertical_bias="0.29000002" />
+        app:layout_constraintVertical_bias="0.29" />
 
     <ImageButton
         android:id="@+id/cell20"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
+        android:layout_width="38dp"
+        android:layout_height="39dp"
         android:background="@drawable/five_in_row_cell"
         android:onClick="choseCell"
         app:layout_constraintBottom_toBottomOf="@+id/field"
         app:layout_constraintEnd_toEndOf="@+id/field"
-        app:layout_constraintHorizontal_bias="0.56"
+        app:layout_constraintHorizontal_bias="0.57"
         app:layout_constraintStart_toStartOf="@+id/cell0"
         app:layout_constraintTop_toTopOf="@+id/field"
-        app:layout_constraintVertical_bias="0.29000002" />
+        app:layout_constraintVertical_bias="0.29" />
 
     <ImageButton
         android:id="@+id/cell21"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
+        android:layout_width="38dp"
+        android:layout_height="39dp"
         android:background="@drawable/five_in_row_cell"
         android:onClick="choseCell"
         app:layout_constraintBottom_toBottomOf="@+id/field"
@@ -349,12 +325,12 @@
         app:layout_constraintHorizontal_bias="0.71"
         app:layout_constraintStart_toStartOf="@+id/cell0"
         app:layout_constraintTop_toTopOf="@+id/field"
-        app:layout_constraintVertical_bias="0.29000002" />
+        app:layout_constraintVertical_bias="0.29" />
 
     <ImageButton
         android:id="@+id/cell22"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
+        android:layout_width="39dp"
+        android:layout_height="39dp"
         android:background="@drawable/five_in_row_cell"
         android:onClick="choseCell"
         app:layout_constraintBottom_toBottomOf="@+id/field"
@@ -362,12 +338,12 @@
         app:layout_constraintHorizontal_bias="0.85"
         app:layout_constraintStart_toStartOf="@+id/cell0"
         app:layout_constraintTop_toTopOf="@+id/field"
-        app:layout_constraintVertical_bias="0.29000002" />
+        app:layout_constraintVertical_bias="0.29" />
 
     <ImageButton
         android:id="@+id/cell23"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
+        android:layout_width="39dp"
+        android:layout_height="41dp"
         android:background="@drawable/five_in_row_cell"
         android:onClick="choseCell"
         app:layout_constraintBottom_toBottomOf="@+id/field"
@@ -375,12 +351,12 @@
         app:layout_constraintHorizontal_bias="0.99"
         app:layout_constraintStart_toStartOf="@+id/cell0"
         app:layout_constraintTop_toTopOf="@+id/field"
-        app:layout_constraintVertical_bias="0.29000002" />
+        app:layout_constraintVertical_bias="0.29" />
 
     <ImageButton
         android:id="@+id/cell24"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
+        android:layout_width="39dp"
+        android:layout_height="41dp"
         android:background="@drawable/five_in_row_cell"
         android:onClick="choseCell"
         app:layout_constraintBottom_toBottomOf="@+id/field"
@@ -392,8 +368,8 @@
 
     <ImageButton
         android:id="@+id/cell25"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
+        android:layout_width="39dp"
+        android:layout_height="39dp"
         android:background="@drawable/five_in_row_cell"
         android:onClick="choseCell"
         app:layout_constraintBottom_toBottomOf="@+id/field"
@@ -405,8 +381,8 @@
 
     <ImageButton
         android:id="@+id/cell26"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
+        android:layout_width="39dp"
+        android:layout_height="41dp"
         android:background="@drawable/five_in_row_cell"
         android:onClick="choseCell"
         app:layout_constraintBottom_toBottomOf="@+id/field"
@@ -418,8 +394,8 @@
 
     <ImageButton
         android:id="@+id/cell27"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
+        android:layout_width="37dp"
+        android:layout_height="39dp"
         android:background="@drawable/five_in_row_cell"
         android:onClick="choseCell"
         app:layout_constraintBottom_toBottomOf="@+id/field"
@@ -427,38 +403,38 @@
         app:layout_constraintHorizontal_bias="0.42"
         app:layout_constraintStart_toStartOf="@+id/cell0"
         app:layout_constraintTop_toTopOf="@+id/field"
-        app:layout_constraintVertical_bias="0.43" />
+        app:layout_constraintVertical_bias="0.429" />
 
     <ImageButton
         android:id="@+id/cell28"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
+        android:layout_width="38dp"
+        android:layout_height="39dp"
         android:background="@drawable/five_in_row_cell"
         android:onClick="choseCell"
         app:layout_constraintBottom_toBottomOf="@+id/field"
         app:layout_constraintEnd_toEndOf="@+id/field"
-        app:layout_constraintHorizontal_bias="0.56"
+        app:layout_constraintHorizontal_bias="0.57"
         app:layout_constraintStart_toStartOf="@+id/cell0"
         app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.43" />
 
     <ImageButton
         android:id="@+id/cell29"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
+        android:layout_width="39dp"
+        android:layout_height="41dp"
         android:background="@drawable/five_in_row_cell"
         android:onClick="choseCell"
         app:layout_constraintBottom_toBottomOf="@+id/field"
         app:layout_constraintEnd_toEndOf="@+id/field"
-        app:layout_constraintHorizontal_bias="0.7"
+        app:layout_constraintHorizontal_bias="0.71"
         app:layout_constraintStart_toStartOf="@+id/cell0"
         app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.43" />
 
     <ImageButton
         android:id="@+id/cell30"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
+        android:layout_width="39dp"
+        android:layout_height="39dp"
         android:background="@drawable/five_in_row_cell"
         android:onClick="choseCell"
         app:layout_constraintBottom_toBottomOf="@+id/field"
@@ -470,8 +446,8 @@
 
     <ImageButton
         android:id="@+id/cell31"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
+        android:layout_width="38dp"
+        android:layout_height="39dp"
         android:background="@drawable/five_in_row_cell"
         android:onClick="choseCell"
         app:layout_constraintBottom_toBottomOf="@+id/field"
@@ -483,8 +459,8 @@
 
     <ImageButton
         android:id="@+id/cell32"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
+        android:layout_width="39dp"
+        android:layout_height="40dp"
         android:background="@drawable/five_in_row_cell"
         android:onClick="choseCell"
         app:layout_constraintBottom_toBottomOf="@+id/field"
@@ -496,8 +472,8 @@
 
     <ImageButton
         android:id="@+id/cell33"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
+        android:layout_width="39dp"
+        android:layout_height="39dp"
         android:background="@drawable/five_in_row_cell"
         android:onClick="choseCell"
         app:layout_constraintBottom_toBottomOf="@+id/field"
@@ -509,34 +485,34 @@
 
     <ImageButton
         android:id="@+id/cell34"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
+        android:layout_width="38dp"
+        android:layout_height="39dp"
         android:background="@drawable/five_in_row_cell"
         android:onClick="choseCell"
         app:layout_constraintBottom_toBottomOf="@+id/field"
         app:layout_constraintEnd_toEndOf="@+id/field"
-        app:layout_constraintHorizontal_bias="0.29"
+        app:layout_constraintHorizontal_bias="0.28"
         app:layout_constraintStart_toStartOf="@+id/cell0"
         app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.57" />
 
     <ImageButton
         android:id="@+id/cell35"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
+        android:layout_width="38dp"
+        android:layout_height="40dp"
         android:background="@drawable/five_in_row_cell"
         android:onClick="choseCell"
         app:layout_constraintBottom_toBottomOf="@+id/field"
         app:layout_constraintEnd_toEndOf="@+id/field"
-        app:layout_constraintHorizontal_bias="0.43"
+        app:layout_constraintHorizontal_bias="0.425"
         app:layout_constraintStart_toStartOf="@+id/cell0"
         app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.57" />
 
     <ImageButton
         android:id="@+id/cell36"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
+        android:layout_width="38dp"
+        android:layout_height="39dp"
         android:background="@drawable/five_in_row_cell"
         android:onClick="choseCell"
         app:layout_constraintBottom_toBottomOf="@+id/field"
@@ -548,8 +524,8 @@
 
     <ImageButton
         android:id="@+id/cell37"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
+        android:layout_width="38dp"
+        android:layout_height="39dp"
         android:background="@drawable/five_in_row_cell"
         android:onClick="choseCell"
         app:layout_constraintBottom_toBottomOf="@+id/field"
@@ -561,8 +537,8 @@
 
     <ImageButton
         android:id="@+id/cell38"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
+        android:layout_width="39dp"
+        android:layout_height="39dp"
         android:background="@drawable/five_in_row_cell"
         android:onClick="choseCell"
         app:layout_constraintBottom_toBottomOf="@+id/field"
@@ -574,8 +550,8 @@
 
     <ImageButton
         android:id="@+id/cell39"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
+        android:layout_width="38dp"
+        android:layout_height="39dp"
         android:background="@drawable/five_in_row_cell"
         android:onClick="choseCell"
         app:layout_constraintBottom_toBottomOf="@+id/field"
@@ -587,8 +563,8 @@
 
     <ImageButton
         android:id="@+id/cell40"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
+        android:layout_width="39dp"
+        android:layout_height="39dp"
         android:background="@drawable/five_in_row_cell"
         android:onClick="choseCell"
         app:layout_constraintBottom_toBottomOf="@+id/field"
@@ -600,8 +576,8 @@
 
     <ImageButton
         android:id="@+id/cell41"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
+        android:layout_width="39dp"
+        android:layout_height="39dp"
         android:background="@drawable/five_in_row_cell"
         android:onClick="choseCell"
         app:layout_constraintBottom_toBottomOf="@+id/field"
@@ -613,47 +589,47 @@
 
     <ImageButton
         android:id="@+id/cell42"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
+        android:layout_width="38dp"
+        android:layout_height="39dp"
         android:background="@drawable/five_in_row_cell"
         android:onClick="choseCell"
         app:layout_constraintBottom_toBottomOf="@+id/field"
         app:layout_constraintEnd_toEndOf="@+id/field"
-        app:layout_constraintHorizontal_bias="0.28"
+        app:layout_constraintHorizontal_bias="0.279"
         app:layout_constraintStart_toStartOf="@+id/cell0"
         app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.71000004" />
 
     <ImageButton
         android:id="@+id/cell43"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
+        android:layout_width="38dp"
+        android:layout_height="39dp"
         android:background="@drawable/five_in_row_cell"
         android:onClick="choseCell"
         app:layout_constraintBottom_toBottomOf="@+id/field"
         app:layout_constraintEnd_toEndOf="@+id/field"
-        app:layout_constraintHorizontal_bias="0.42"
+        app:layout_constraintHorizontal_bias="0.425"
         app:layout_constraintStart_toStartOf="@+id/cell0"
         app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.71000004" />
 
     <ImageButton
         android:id="@+id/cell44"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
+        android:layout_width="38dp"
+        android:layout_height="39dp"
         android:background="@drawable/five_in_row_cell"
         android:onClick="choseCell"
         app:layout_constraintBottom_toBottomOf="@+id/field"
         app:layout_constraintEnd_toEndOf="@+id/field"
-        app:layout_constraintHorizontal_bias="0.56"
+        app:layout_constraintHorizontal_bias="0.57"
         app:layout_constraintStart_toStartOf="@+id/cell0"
         app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.71000004" />
 
     <ImageButton
         android:id="@+id/cell45"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
+        android:layout_width="38dp"
+        android:layout_height="39dp"
         android:background="@drawable/five_in_row_cell"
         android:onClick="choseCell"
         app:layout_constraintBottom_toBottomOf="@+id/field"
@@ -665,8 +641,8 @@
 
     <ImageButton
         android:id="@+id/cell46"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
+        android:layout_width="39dp"
+        android:layout_height="39dp"
         android:background="@drawable/five_in_row_cell"
         android:onClick="choseCell"
         app:layout_constraintBottom_toBottomOf="@+id/field"
@@ -678,8 +654,8 @@
 
     <ImageButton
         android:id="@+id/cell47"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
+        android:layout_width="38dp"
+        android:layout_height="39dp"
         android:background="@drawable/five_in_row_cell"
         android:onClick="choseCell"
         app:layout_constraintBottom_toBottomOf="@+id/field"
@@ -691,8 +667,8 @@
 
     <ImageButton
         android:id="@+id/cell48"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
+        android:layout_width="39dp"
+        android:layout_height="41dp"
         android:background="@drawable/five_in_row_cell"
         android:onClick="choseCell"
         app:layout_constraintBottom_toBottomOf="@+id/field"
@@ -704,8 +680,8 @@
 
     <ImageButton
         android:id="@+id/cell49"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
+        android:layout_width="39dp"
+        android:layout_height="41dp"
         android:background="@drawable/five_in_row_cell"
         android:onClick="choseCell"
         app:layout_constraintBottom_toBottomOf="@+id/field"
@@ -717,8 +693,8 @@
 
     <ImageButton
         android:id="@+id/cell50"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
+        android:layout_width="39dp"
+        android:layout_height="39dp"
         android:background="@drawable/five_in_row_cell"
         android:onClick="choseCell"
         app:layout_constraintBottom_toBottomOf="@+id/field"
@@ -730,47 +706,47 @@
 
     <ImageButton
         android:id="@+id/cell51"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
+        android:layout_width="38dp"
+        android:layout_height="41dp"
         android:background="@drawable/five_in_row_cell"
         android:onClick="choseCell"
         app:layout_constraintBottom_toBottomOf="@+id/field"
         app:layout_constraintEnd_toEndOf="@+id/field"
-        app:layout_constraintHorizontal_bias="0.42"
+        app:layout_constraintHorizontal_bias="0.425"
         app:layout_constraintStart_toStartOf="@+id/cell0"
         app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.85" />
 
     <ImageButton
         android:id="@+id/cell52"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
+        android:layout_width="38dp"
+        android:layout_height="39dp"
         android:background="@drawable/five_in_row_cell"
         android:onClick="choseCell"
         app:layout_constraintBottom_toBottomOf="@+id/field"
         app:layout_constraintEnd_toEndOf="@+id/field"
-        app:layout_constraintHorizontal_bias="0.56"
+        app:layout_constraintHorizontal_bias="0.57"
         app:layout_constraintStart_toStartOf="@+id/cell0"
         app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.85" />
 
     <ImageButton
         android:id="@+id/cell53"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
+        android:layout_width="38dp"
+        android:layout_height="39dp"
         android:background="@drawable/five_in_row_cell"
         android:onClick="choseCell"
         app:layout_constraintBottom_toBottomOf="@+id/field"
         app:layout_constraintEnd_toEndOf="@+id/field"
-        app:layout_constraintHorizontal_bias="0.7"
+        app:layout_constraintHorizontal_bias="0.71"
         app:layout_constraintStart_toStartOf="@+id/cell0"
         app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.85" />
 
     <ImageButton
         android:id="@+id/cell54"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
+        android:layout_width="39dp"
+        android:layout_height="39dp"
         android:background="@drawable/five_in_row_cell"
         android:onClick="choseCell"
         app:layout_constraintBottom_toBottomOf="@+id/field"
@@ -782,8 +758,8 @@
 
     <ImageButton
         android:id="@+id/cell55"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
+        android:layout_width="38dp"
+        android:layout_height="39dp"
         android:background="@drawable/five_in_row_cell"
         android:onClick="choseCell"
         app:layout_constraintBottom_toBottomOf="@+id/field"
@@ -795,8 +771,8 @@
 
     <ImageButton
         android:id="@+id/cell56"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
+        android:layout_width="39dp"
+        android:layout_height="39dp"
         android:background="@drawable/five_in_row_cell"
         android:onClick="choseCell"
         app:layout_constraintBottom_toBottomOf="@+id/field"
@@ -808,8 +784,8 @@
 
     <ImageButton
         android:id="@+id/cell57"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
+        android:layout_width="39dp"
+        android:layout_height="39dp"
         android:background="@drawable/five_in_row_cell"
         android:onClick="choseCell"
         app:layout_constraintBottom_toBottomOf="@+id/field"
@@ -821,8 +797,8 @@
 
     <ImageButton
         android:id="@+id/cell58"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
+        android:layout_width="39dp"
+        android:layout_height="39dp"
         android:background="@drawable/five_in_row_cell"
         android:onClick="choseCell"
         app:layout_constraintBottom_toBottomOf="@+id/field"
@@ -834,47 +810,47 @@
 
     <ImageButton
         android:id="@+id/cell59"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
+        android:layout_width="38dp"
+        android:layout_height="39dp"
         android:background="@drawable/five_in_row_cell"
         android:onClick="choseCell"
         app:layout_constraintBottom_toBottomOf="@+id/field"
         app:layout_constraintEnd_toEndOf="@+id/field"
-        app:layout_constraintHorizontal_bias="0.42"
+        app:layout_constraintHorizontal_bias="0.425"
         app:layout_constraintStart_toStartOf="@+id/cell0"
         app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.99" />
 
     <ImageButton
         android:id="@+id/cell60"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
+        android:layout_width="38dp"
+        android:layout_height="39dp"
         android:background="@drawable/five_in_row_cell"
         android:onClick="choseCell"
         app:layout_constraintBottom_toBottomOf="@+id/field"
         app:layout_constraintEnd_toEndOf="@+id/field"
-        app:layout_constraintHorizontal_bias="0.56"
+        app:layout_constraintHorizontal_bias="0.57"
         app:layout_constraintStart_toStartOf="@+id/cell0"
         app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.99" />
 
     <ImageButton
         android:id="@+id/cell61"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
+        android:layout_width="39dp"
+        android:layout_height="39dp"
         android:background="@drawable/five_in_row_cell"
         android:onClick="choseCell"
         app:layout_constraintBottom_toBottomOf="@+id/field"
         app:layout_constraintEnd_toEndOf="@+id/field"
-        app:layout_constraintHorizontal_bias="0.7"
+        app:layout_constraintHorizontal_bias="0.71"
         app:layout_constraintStart_toStartOf="@+id/cell0"
         app:layout_constraintTop_toTopOf="@+id/field"
         app:layout_constraintVertical_bias="0.99" />
 
     <ImageButton
         android:id="@+id/cell62"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
+        android:layout_width="39dp"
+        android:layout_height="39dp"
         android:background="@drawable/five_in_row_cell"
         android:onClick="choseCell"
         app:layout_constraintBottom_toBottomOf="@+id/field"
@@ -886,8 +862,8 @@
 
     <ImageButton
         android:id="@+id/cell63"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
+        android:layout_width="38dp"
+        android:layout_height="39dp"
         android:background="@drawable/five_in_row_cell"
         android:onClick="choseCell"
         app:layout_constraintBottom_toBottomOf="@+id/field"
@@ -919,23 +895,20 @@
 
     <TextView
         android:id="@+id/resultText"
-        android:layout_width="wrap_content"
-        android:layout_height="47dp"
-        android:layout_marginBottom="424dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="290dp"
+        android:layout_height="46dp"
         android:background="@drawable/cell0"
         android:text="@string/win"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="@android:color/holo_red_dark"
-        android:textSize="30sp"
+        android:textSize="36sp"
         android:textStyle="bold"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/back2"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/field"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.803" />
+        app:layout_constraintTop_toTopOf="@+id/back2"
+        app:layout_constraintVertical_bias="1.0" />
 
 </android.support.constraint.ConstraintLayout>
