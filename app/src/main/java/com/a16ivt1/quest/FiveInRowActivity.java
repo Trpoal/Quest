@@ -133,7 +133,6 @@ public class FiveInRowActivity extends AppCompatActivity {
                 }
                 z++;
             }
-            work.vivodM();
             que = !que;
         }
 
@@ -153,7 +152,6 @@ public class FiveInRowActivity extends AppCompatActivity {
                 }
                 z++;
             }
-            work.vivodM();
             que = !que;
         }
         switch (l) {

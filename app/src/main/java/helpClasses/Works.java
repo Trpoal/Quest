@@ -23,21 +23,6 @@ public class Works
             }
         }
     }
-    public void vivodM(){
-        for (int i=0;i<8;i++){
-            for (int j=0;j<8;j++){
-                System.out.print(mass[i][j]);
-            }
-            System.out.println();
-        }
-    }
-    public void vivod(){
-        for (PossibleSt k:PossArr){
-            System.out.print(k.i);
-            System.out.println(" ");
-            System.out.println(k.j);
-        }
-    }
     public boolean findPoss(int p)
     {
         boolean f = false;
@@ -86,13 +71,11 @@ public class Works
             if (q) {
                 mass[i][j] = '1';
                 changePoss(i,j);
-                System.out.println((i+1)+" "+(j+1)+" 1");
                 b= FindWin(i, j, '1');
                 if (b==true) l=1;
             } else {
                 mass[i][j] = '2';
                 changePoss(i,j);
-                System.out.println((i+1)+" "+(j+1)+" 2");
                 b= FindWin(i, j, '2');
                 if (b==true) l=2;
             }
@@ -106,7 +89,6 @@ public class Works
         for (int z=0;z<8;z++){
             if (mass[z][j]==ch) {
                 s++;
-                System.out.println(s+" "+ch);
                 if (s>=4) {
                     b=true;
                     return b;
@@ -118,7 +100,6 @@ public class Works
         for (int z=0;z<8;z++){
             if (mass[i][z]==ch) {
                 s++;
-                System.out.println(s+" "+ch);
                 if (s>=4) {
                     b=true;
                     return b;
@@ -132,7 +113,6 @@ public class Works
             for (int z=0;z<8;z++){
                 if (mass[z][z]==ch) {
                     s++;
-                    System.out.println(s+" "+ch);
                     if (s>=4) {
                         b=true;
                         return b;
@@ -147,7 +127,6 @@ public class Works
             while((i-j+r)<8){
                 if (mass[i-j+r][r]==ch) {
                     s++;
-                    System.out.println(s+" "+ch);
                     if (s>=4) {
                         b=true;
                         return b;
@@ -164,7 +143,6 @@ public class Works
             while ((j-i+r)<8){
                 if (mass[j-i+r][r]==ch) {
                     s++;
-                    System.out.println(s+" "+ch);
                     if (s>=4) {
                         b=true;
                         return b;
@@ -179,7 +157,6 @@ public class Works
             for (int r=0;r<8;r++){
                 if (mass[7-r][r]==ch) {
                     s++;
-                    System.out.println(s+" "+ch);
                     if (s>=4) {
                         b=true;
                         return b;
@@ -195,7 +172,6 @@ public class Works
             while (r<=(i+j)){
                 if (mass[i+j-r][r]==ch) {
                     s++;
-                    System.out.println(s+" "+ch);
                     if (s>=4) {
                         b=true;
                         return b;
@@ -211,7 +187,6 @@ public class Works
             while((i+j+r)<15){
                 if (mass[7-r][i+j-7+r]==ch) {
                     s++;
-                    System.out.println(s+" "+ch);
                     if (s>=4){
                         b=true;
                         return b;
@@ -230,11 +205,11 @@ public class Works
         while (((j+z)<8)&&(mass[i][j+z]!='1')){
             z++;
         }
-        int x = 0;
+        int x = 1;
         while (((j-x)>=0)&&(mass[i][j-x]!='1')){
             x++;
         }
-        z+=(x-1);
+        z+=x-1;
         if (z>=4) b=true;
         return b;
     }
@@ -245,7 +220,7 @@ public class Works
         while (((i+z)<8)&&(mass[i+z][j]!='1')){
             z++;
         }
-        int x = 0;
+        int x = 1;
         while (((i-x)>=0)&&(mass[i-x][j]!='1')){
             x++;
         }
@@ -261,7 +236,7 @@ public class Works
         while (((i+z)<8)&&((j+z)<8)&&(mass[i+z][j+z]!=ch)){
             z++;
         }
-        int x = 0;
+        int x = 1;
         while (((i-x)>=0)&&((j-x)>=0)&&(mass[i-x][j-x]!=ch)){
             x++;
         }
@@ -276,110 +251,13 @@ public class Works
         while (((i+z)<8)&&((j-z)>=0)&&(mass[i+z][j-z]!=ch)){
             z++;
         }
-        int x = 0;
+        int x = 1;
         while (((i-x)>=0)&&((j+x)<8)&&(mass[i-x][j+x]!=ch)){
             x++;
         }
         z+=(x-1);
         if (z>=4) b=true;
         return b;
-    }
-    public char[] CreatV(int i, int j, char ch)
-    {
-
-        char mass1[];
-        mass1 = new char [7];
-        if (i<=3){
-            for (int x=0;x<7;x++){
-                if (mass[x][j]==ch) mass1[x]='x';
-                else mass1[x]=mass[x][j];
-            }
-        }
-        else{
-            for (int x=0;x<7;x++){
-                if (mass[x+1][j]==ch) mass1[x]='x';
-                else mass1[x]=mass[x+1][j];
-            }
-        }
-        return mass1;
-    }
-    public char[] CreatDG(int i, int j, char ch){
-        char mass1[];
-        mass1 = new char [7];
-        if (i==j){
-            if (i<=3){
-                for (int z = 0;z<7;z++){
-                    if (mass[z][z]==ch) mass1[z]='x';
-                    else mass1[z]=mass[z][z];
-                }
-            }
-            else {
-                for (int z = 0;z<7;z++){
-                    if (mass[z+1][z+1]==ch) mass1[z]='x';
-                    else mass1[z]=mass[z+1][z+1];
-                }
-            }
-        }
-        if (i<j){
-            for (int z=0;z<7;z++){
-                if ((z+(j-i))<8) {
-                    if (mass[z][z+j-i]==ch) mass1[z]='x';
-                    else mass1[z]=mass[z][z+j-i];
-                }
-                mass1[z]='D';
-            }
-        }
-        if (i>j){
-            for (int z=0;z<7;z++){
-                if ((z+(i-j))<8) {
-                    if (mass[z][z+i-j]==ch) mass1[z]='x';
-                    else mass1[z]=mass[z][z+i-j];
-                }
-                mass1[z]='D';
-            }
-        }
-        return mass1;
-    }
-    public char[] CreatDP(int i, int j, char ch){
-        char mass1[];
-        mass1 = new char [7];
-        if ((i+j)==7){
-            if (i>j){
-                for (int z =0;z<7;z++){
-                    if ((mass[7-z][z])==ch) mass1[z]='x';
-                    else mass1[z]=mass[7-z][z];
-                }
-            }
-            else{
-                for (int z =1;z<8;z++){
-                    if ((mass[7-z][z])==ch) mass1[z-1]='x';
-                    else mass1[z-1]=mass[7-z][z];
-                }
-            }
-        }
-        if ((i+j)<7){
-            for (int z =0;z<7;z++){
-                if ((i+j-z)<0){
-                    mass1[z]='D';
-                }
-                else{
-                    if ((mass[i+j-z][z])==ch) mass1[z]='x';
-                    else mass1[z]=mass[i+j-z][z];
-                }
-            }
-        }
-        if ((i+j)>7){
-            for (int z =1;z<8;z++){
-                if ((i+j+z)>14){
-                    mass1[z]='D';
-                }
-                else{
-                    if ((mass[i+j-z][z])==ch) mass1[z]='x';
-                    else mass1[z]=mass[i+j-z][z];
-                }
-            }
-        }
-        return mass1;
     }
     public int PointFour(int n, char[] mass1){
         int k=0;
@@ -506,7 +384,7 @@ public class Works
                     if (mass[z+1][z+1]=='m'){
                         mass1[z]='x';
                         n=z;
-                    }
+                    }else
                     if (mass[z+1][z+1]==ch) mass1[z]='x';
                     else mass1[z]=mass[z+1][z+1];
                 }
@@ -534,7 +412,7 @@ public class Works
                     if (mass[z][z+i-j]=='m'){
                         mass1[z]='x';
                         n=z;
-                    }
+                    }else
                     if (mass[z][z+i-j]==ch) mass1[z]='x';
                     else mass1[z]=mass[z][z+i-j];
                 }
@@ -569,7 +447,7 @@ public class Works
                     if (mass[7-z][z]=='m'){
                         mass1[z-1]='x';
                         n=z-1;
-                    }
+                    }else
                     if ((mass[7-z][z])==ch) mass1[z-1]='m';
                     else mass1[z-1]=mass[7-z][z];
                 }
@@ -602,7 +480,7 @@ public class Works
                     if (mass[7-z][i+j-7+z]=='m'){
                         mass1[z]='x';
                         n=z;
-                    }
+                    }else
                     if ((mass[7-z][i+j-7+z])==ch) mass1[z]='x';
                     else mass1[z]=mass[7-z][i+j-7+z];
                 }
@@ -667,7 +545,7 @@ public class Works
             if (k<m.i) k=m.i;
         }
         for (Iterator<PossibleSt> iterator = PossAI.iterator(); iterator.hasNext(); ){
-            if (iterator.next().i <(k*0.9))
+            if (iterator.next().i <(k*0.95))
                 iterator.remove();
         }
         int yy = random.nextInt(PossAI.size());
