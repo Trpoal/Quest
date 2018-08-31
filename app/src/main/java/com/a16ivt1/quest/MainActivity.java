@@ -19,11 +19,16 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class MainActivity extends AppCompatActivity {
+    private static final int GAME_ACTIVITY = 1;
+    private static final int MINI_GAMES_ACTIVITY = 2;
+    protected static final int NO_QUEST_GAME = 0;
+    protected static final int ON_QUEST_GAME = 1;
 
     static int progressOfGame;   //Прогресс квеста
 
-    private static final int GAME_ACTIVITY = 1;
-    private static final int MINI_GAMES_ACTIVITY = 2;
+    static int modeOfGame = NO_QUEST_GAME;
+
+
     public static boolean res = false;
 
     public static boolean newGame = false;

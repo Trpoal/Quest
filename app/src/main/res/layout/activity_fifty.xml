@@ -269,6 +269,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:fontFamily="sans-serif-smallcaps"
+        android:onClick="cont"
         android:text="@string/continueStr"
         android:textColor="@color/main_text_col"
         android:visibility="invisible"

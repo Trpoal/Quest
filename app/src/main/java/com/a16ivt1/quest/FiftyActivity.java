@@ -257,22 +257,23 @@ public class FiftyActivity extends AppCompatActivity {
         finishGame();
     }
 
-    public void finishGame()
-    {
+    public void finishGame() {
         int z = 0, p = 1;
-        for (int i=0;i<4;i++){
-            for (int j=0;j<4;j++){
-                z=Integer.parseInt((String) masCell[i][j].getTag());
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                z = Integer.parseInt((String) masCell[i][j].getTag());
                 Log.v("z =", String.valueOf(z));
                 Log.v("p = ", String.valueOf(p));
-                if (z==(i*4+j+1)) p++;
+                if (z == (i * 4 + j + 1)) p++;
             }
         }
         Log.v("p = ", String.valueOf(p));
-        if (p==16)
-        {
-            Button cont = findViewById(R.id.cont);
-            cont.setVisibility(View.VISIBLE);
+        if (p == 16) {
+            if(MainActivity.modeOfGame == MainActivity.ON_QUEST_GAME) {
+                Button cont = findViewById(R.id.cont);
+                cont.setVisibility(View.VISIBLE);
+                MainActivity.modeOfGame = MainActivity.NO_QUEST_GAME;
+            }
             TextView winText = findViewById(R.id.resultText2);
             winText.setVisibility(View.VISIBLE);
             winText.setText(getString(R.string.win));
@@ -289,11 +290,10 @@ public class FiftyActivity extends AppCompatActivity {
     }
 
     public void cont(View v) {
-        MainActivity.progressOfGame = 5;
+        MainActivity.progressOfGame++;
         Intent intent = new Intent(FiftyActivity.this, GameActivity.class);
         startActivity(intent);
         this.finish();
-
     }
 
     public void win(View view) {

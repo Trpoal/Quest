@@ -129,6 +129,8 @@ public class GameActivity extends AppCompatActivity {
 
         if (c.getCount() < progress) {
             text.setText("Конец истории");
+            progress = 0;
+            MainActivity.progressOfGame = 0;
             var1But.setEnabled(false);
             var1But.setVisibility(View.INVISIBLE);
             var2But.setEnabled(false);
@@ -162,7 +164,8 @@ public class GameActivity extends AppCompatActivity {
          * Если ее поле с выбором пустое, то эта кнопка не будет отобраться за экране выбора
          * Если больше нет истории, то будет выведен "Конец истории" */
         if (newProgress == 1000) {
-            //progress++;
+            MainActivity.progressOfGame = progress;
+            MainActivity.modeOfGame = MainActivity.ON_QUEST_GAME;
             Intent intent = new Intent(GameActivity.this, FiftyActivity.class);
             startActivity(intent);
             this.finish();
@@ -192,6 +195,8 @@ public class GameActivity extends AppCompatActivity {
         }
         if (c.getString(1) == null) {
             text.setText("Конец истории");
+            progress = 0;
+            MainActivity.progressOfGame = 0;
         } else {
             text.setText(c.getString(1));
         }

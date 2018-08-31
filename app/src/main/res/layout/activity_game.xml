@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:adjustViewBounds="false"
         android:background="@drawable/game_pic"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -27,6 +28,7 @@
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="16dp"
         android:onClick="nextText"
+        android:textAlignment="viewStart"
         android:textColor="@color/main_text_col"
         app:layout_constraintBottom_toTopOf="@+id/var2But"
         app:layout_constraintLeft_toLeftOf="parent" />
@@ -39,6 +41,7 @@
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="16dp"
         android:onClick="nextText"
+        android:textAlignment="viewStart"
         android:textColor="@color/main_text_col"
         app:layout_constraintBottom_toTopOf="@+id/var3But"
         app:layout_constraintLeft_toLeftOf="parent" />
@@ -50,21 +53,23 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:onClick="nextText"
+        android:textAlignment="viewStart"
         android:textColor="@color/main_text_col"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent" />
 
     <TextView
         android:id="@+id/text"
-        android:layout_width="333dp"
-        android:layout_height="373dp"
+        android:layout_width="331dp"
+        android:layout_height="430dp"
+        android:layout_weight="1"
         android:textColor="@color/main_text_col"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/var1But"
+        app:layout_constraintBottom_toBottomOf="@+id/back"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.518"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.333" />
+        app:layout_constraintVertical_bias="0.061" />
 
 </android.support.constraint.ConstraintLayout>
