@@ -24,7 +24,7 @@ import static com.a16ivt1.quest.GameActivity.APP_PREFERENSES;
 public class DatabaseHelper extends SQLiteOpenHelper {
     private static String DB_PATH = null;
     private static String DB_NAME = "Quest.db";
-    private static int DB_VERSION = 8;
+    private static int DB_VERSION = 9;
     private SQLiteDatabase myDataBase;
     private final Context myContext;
 
