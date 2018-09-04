@@ -422,11 +422,11 @@ public class Works {
         } else {
             for (int z = 0; z < 7; z++) {
                 if ((z + (i - j)) < 8) {
-                    if (mass[z][z + i - j] == 'm') {
+                    if (mass[i-j+z][z] == 'm') {
                         mass1[z] = 'x';
                         n = z;
-                    } else if (mass[z][z + i - j] == ch) mass1[z] = 'x';
-                    else mass1[z] = mass[z][z + i - j];
+                    } else if (mass[z+i-j][z] == ch) mass1[z] = 'x';
+                    else mass1[z] = mass[z+i-j][z];
                 } else mass1[z] = 'D';
             }
         }
