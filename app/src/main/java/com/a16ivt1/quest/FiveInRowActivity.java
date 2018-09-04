@@ -2,6 +2,7 @@ package com.a16ivt1.quest;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -174,6 +175,7 @@ public class FiveInRowActivity extends AppCompatActivity {
                 case 1: {
                     TextView lostText = findViewById(R.id.resultText);
                     lostText.setVisibility(View.VISIBLE);
+                    lostText.setTextColor(Color.GREEN);
                     lostText.setText(getString(R.string.win));
                     break;
                 }
@@ -182,6 +184,7 @@ public class FiveInRowActivity extends AppCompatActivity {
                     retryBut.setVisibility(View.VISIBLE);
                     TextView lostText = findViewById(R.id.resultText);
                     lostText.setVisibility(View.VISIBLE);
+                    lostText.setTextColor(Color.RED);
                     lostText.setText(getString(R.string.lost));
                     break;
                 }

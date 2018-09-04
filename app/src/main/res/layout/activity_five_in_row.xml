@@ -917,13 +917,16 @@
 
     <TextView
         android:id="@+id/resultText"
+        style="@android:style/Widget.DeviceDefault.Light.TextView.ListSeparator"
         android:layout_width="290dp"
         android:layout_height="46dp"
-        android:background="@drawable/cell0"
+        android:lineSpacingExtra="8sp"
+        android:shadowColor="@color/main_text_col"
         android:text="@string/win"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="@android:color/holo_red_dark"
+        android:textColorHighlight="@color/colorPrimary"
         android:textSize="36sp"
         android:textStyle="bold"
         android:visibility="invisible"

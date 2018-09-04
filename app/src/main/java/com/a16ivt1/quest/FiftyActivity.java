@@ -2,6 +2,7 @@ package com.a16ivt1.quest;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -286,6 +287,7 @@ public class FiftyActivity extends AppCompatActivity {
             }
             TextView winText = findViewById(R.id.resultText2);
             winText.setVisibility(View.VISIBLE);
+            winText.setTextColor(Color.GREEN);
             winText.setText(getString(R.string.win));
             ImageView finalPic = findViewById(R.id.finalPic);
             finalPic.setVisibility(View.VISIBLE);
