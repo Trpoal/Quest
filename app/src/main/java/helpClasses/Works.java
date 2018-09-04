@@ -140,7 +140,7 @@ public class Works {
             s = 0;
             int r = 0;
             while ((j - i + r) < 8) {
-                if (mass[j - i + r][r] == ch) {
+                if (mass[r][j - i + r] == ch) {
                     s++;
                     if (s >= 4) {
                         b = true;
@@ -326,7 +326,17 @@ public class Works {
             }
         }
         k += PointFour(n, mass1);
-        if (k == 0) k += PointThree(n, mass1);
+        if (ch=='1'){
+            double defPoint= k*0.9;
+            k=(int)defPoint;
+        }
+        if (k == 0) {
+            k += PointThree(n, mass1);
+            if (ch=='1'){
+                double defPoint= k*0.9;
+                k=(int)defPoint;
+            }
+        }
         mass[i][j] = '0';
         return k;
     }
@@ -360,7 +370,17 @@ public class Works {
             }
         }
         k += PointFour(n, mass1);
-        if (k == 0) k += PointThree(n, mass1);
+        if (ch=='1'){
+            double defPoint= k*0.9;
+            k=(int)defPoint;
+        }
+        if (k == 0) {
+            k += PointThree(n, mass1);
+            if (ch=='1'){
+                double defPoint= k*0.9;
+                k=(int)defPoint;
+            }
+        }
         mass[i][j] = '0';
         return k;
     }
@@ -411,7 +431,17 @@ public class Works {
             }
         }
         k += PointFour(n, mass1);
-        if (k == 0) k += PointThree(n, mass1);
+        if (ch=='1'){
+            double defPoint= k*0.9;
+            k=(int)defPoint;
+        }
+        if (k == 0) {
+            k += PointThree(n, mass1);
+            if (ch=='1'){
+                double defPoint= k*0.9;
+                k=(int)defPoint;
+            }
+        }
         mass[i][j] = '0';
         return k;
     }
@@ -466,7 +496,17 @@ public class Works {
             }
         }
         k += PointFour(n, mass1);
-        if (k == 0) k += PointThree(n, mass1);
+        if (ch=='1'){
+            double defPoint= k*0.9;
+            k=(int)defPoint;
+        }
+        if (k == 0) {
+            k += PointThree(n, mass1);
+            if (ch=='1'){
+                double defPoint= k*0.9;
+                k=(int)defPoint;
+            }
+        }
         mass[i][j] = '0';
         return k;
     }
@@ -474,28 +514,28 @@ public class Works {
     public int powerGorizontal(int i, int j) {
         int k = 0;
         if (possibleG(i, j)) k += AttackG(i, j, '2');
-        k += AttackG(i, j, '1');
+         if (k<9999) k += AttackG(i, j, '1');
         return k;
     }
 
     public int powerVertical(int i, int j) {
         int k = 0;
         if (possibleV(i, j)) k += AttackV(i, j, '2');
-        k += AttackV(i, j, '1');
+        if (k<9999) k += AttackV(i, j, '1');
         return k;
     }
 
     public int powerDiagonalG(int i, int j) {
         int k = 0;
         if (possibleDG(i, j, '1')) k += AttackDG(i, j, '2');
-        if (possibleDG(i, j, '2')) k += AttackDG(i, j, '1');
+        if (k<9999) if (possibleDG(i, j, '2')) k += AttackDG(i, j, '1');
         return k;
     }
 
     public int powerDiagonalP(int i, int j) {
         int k = 0;
         if (possibleDP(i, j, '1')) k += AttackDP(i, j, '2');
-        if (possibleDP(i, j, '2')) k += AttackDP(i, j, '1');
+        if (k<9999) if (possibleDP(i, j, '2')) k += AttackDP(i, j, '1');
         return k;
     }
 
