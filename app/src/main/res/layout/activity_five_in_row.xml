@@ -917,14 +917,12 @@
 
     <TextView
         android:id="@+id/resultText"
-        style="@android:style/Widget.DeviceDefault.Light.TextView.ListSeparator"
         android:layout_width="290dp"
         android:layout_height="46dp"
         android:lineSpacingExtra="8sp"
         android:text="@string/win"
         android:textAlignment="center"
         android:textAllCaps="false"
-        android:textColor="@android:color/holo_red_dark"
         android:textSize="36sp"
         android:textStyle="bold"
         android:visibility="invisible"
